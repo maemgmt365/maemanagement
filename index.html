@@ -1,66 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mae Management LLC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mae Management LLC is a founder-led investment firm headquartered in Austin, Texas, focused on acquiring and operating durable construction, project management, and government-adjacent businesses." />
   <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: #0f172a;
-      color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+    :root{
+      --bg:#0b1220;
+      --panel:#0f1a2f;
+      --text:#e6eaf2;
+      --muted:#a8b0c3;
+      --line:rgba(255,255,255,.10);
+      --accent:#93c5fd;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 980px;
     }
-    .container {
-      max-width: 720px;
-      padding: 40px;
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(147,197,253,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg), #070b14 70%);
+      color:var(--text);
+      line-height:1.55;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
+
+    a{ color:var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:40px 22px 70px;
     }
-    h2 {
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: #9ca3af;
-      margin-bottom: 2rem;
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:36px;
+      flex-wrap:wrap;
+      gap:12px;
     }
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
+
+    header .brand{
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(230,234,242,.9);
     }
-    footer {
-      font-size: 0.9rem;
-      color: #9ca3af;
+
+    header .location{
+      font-size:13px;
+      color:var(--muted);
     }
-    a {
-      color: #93c5fd;
-      text-decoration: none;
+
+    section{
+      border:1px solid var(--line);
+      background:rgba(15,26,47,.65);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:34px;
+      margin-bottom:22px;
+    }
+
+    h1{
+      font-size:clamp(34px,4vw,48px);
+      margin:0 0 12px;
+      letter-spacing:-0.02em;
+    }
+
+    h2{
+      font-size:14px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+      color:rgba(230,234,242,.9);
+    }
+
+    p{
+      color:rgba(168,176,195,.98);
+      max-width:75ch;
+      margin-bottom:14px;
+      font-size:15px;
+    }
+
+    ul{
+      margin:12px 0 0 18px;
+      color:rgba(168,176,195,.98);
+      font-size:14px;
+    }
+
+    li{ margin:8px 0; }
+
+    footer{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+      font-size:13px;
+      color:rgba(168,176,195,.8);
+      padding-top:12px;
+    }
+
+    @media(max-width:800px){
+      section{ padding:26px 20px; }
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Mae Management LLC</h1>
-    <h2>Founder-led acquisitions. Long-term ownership.</h2>
 
-    <p>
-      Mae Management LLC is a private, founder-led investment firm focused on acquiring
-      and operating established construction, project management, and government-adjacent
-      businesses. We partner with owners seeking a thoughtful transition and prioritize
-      continuity, operational discipline, and respect for existing teams.
-    </p>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">Mae Management LLC</div>
+      <div class="location">Founder-led acquisitions • Austin, Texas</div>
+    </header>
+
+    <section>
+      <h1>Acquiring and stewarding durable, essential businesses.</h1>
+      <p>
+        Mae Management LLC is a founder-led investment firm headquartered in Austin, Texas,
+        focused on acquiring and operating established construction, project management,
+        and government-adjacent businesses across the United States.
+      </p>
+      <p>
+        We partner with owners who value continuity, disciplined execution, and a thoughtful
+        transition for their teams and customers. Mae is built for long-term ownership—not
+        short-term optimization or financial engineering.
+      </p>
+      <p>
+        <strong>Contact:</strong> <a href="mailto:b@mae365.com">b@mae365.com</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Investment Focus</h2>
+      <p>
+        We target service-based businesses tied to infrastructure, mission-critical facilities,
+        public-sector demand, and long-term maintenance cycles—where operational execution,
+        repeat clients, and capable teams drive durable value.
+      </p>
+      <ul>
+        <li>Construction and specialty trades</li>
+        <li>Project and construction management</li>
+        <li>Environmental and government-adjacent services</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Acquisition Criteria</h2>
+      <ul>
+        <li>$500K+ in annual cash flow or earnings</li>
+        <li>Established operations with a track record</li>
+        <li>Recurring customers or contracted revenue</li>
+        <li>Capable management or key operators in place</li>
+        <li>Clean financials and straightforward operations</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Founder</h2>
+      <p>
+        <strong>Brandon Krone</strong> is the Founder and Principal of Mae Management LLC.
+        He brings a rare combination of hands-on construction experience and institutional
+        finance expertise.
+      </p>
+      <p>
+        Brandon grew up working in a family general contracting business, studied architectural
+        design, and competed as a Division I wrestler at the University of Minnesota before
+        building a career in finance at Fidelity Investments and Charles Schwab.
+      </p>
+      <p>
+        Mae Management was formed as a convergence of these experiences—with a commitment
+        to disciplined ownership, respect for operators, and responsible long-term stewardship.
+      </p>
+    </section>
 
     <footer>
-      Private · Confidential · Long-Term Oriented<br>
-      <a href="mailto:b@mae365.com">b@mae365.com</a>
+      <div>© <span id="year"></span> Mae Management LLC</div>
+      <div>Private • Confidential • Long-Term Oriented</div>
     </footer>
+
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
