@@ -11,10 +11,11 @@
       --bg: #f6f1e7;           /* warm cream */
       --ink: #1f1a14;          /* deep brown-black */
       --muted: #5f564d;        /* taupe */
-      --card: rgba(255,255,255,.72);
+      --card: rgba(255,255,255,.74);
       --line: rgba(31,26,20,.10);
-      --accent: #8b5e34;       /* warm clay */
+      --accent: #8b5e34;       /* clay */
       --accent2:#6b4b2a;       /* darker clay */
+      --accent3:#4f6f5b;       /* sage */
       --shadow: 0 18px 60px rgba(31,26,20,.12);
       --radius: 18px;
       --max: 980px;
@@ -28,7 +29,7 @@
       color: var(--ink);
       background:
         radial-gradient(900px 500px at 20% 10%, rgba(139,94,52,.10), transparent 60%),
-        radial-gradient(700px 420px at 85% 15%, rgba(107,75,42,.10), transparent 60%),
+        radial-gradient(700px 420px at 85% 15%, rgba(79,111,91,.10), transparent 60%),
         radial-gradient(900px 520px at 50% 120%, rgba(31,26,20,.08), transparent 60%),
         linear-gradient(180deg, #fbf7ef 0%, var(--bg) 40%, #f2eadf 100%);
       line-height:1.6;
@@ -105,6 +106,7 @@
       overflow:hidden;
     }
 
+    /* subtle stone texture */
     .hero:before{
       content:"";
       position:absolute;
@@ -135,7 +137,7 @@
       width: 8px; height: 8px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(139,94,52,.14);
+      box-shadow: 0 0 0 6px rgba(79,111,91,.16);
     }
 
     h1{
@@ -152,7 +154,7 @@
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: rgba(31,26,20,.78);
       font-size: 15px;
-      max-width: 82ch;
+      max-width: 88ch;
     }
 
     .cta{
@@ -185,7 +187,7 @@
 
     .btn:hover{
       text-decoration:none;
-      border-color: rgba(31,26,20,.20);
+      border-color: rgba(79,111,91,.35);
       transform: translateY(-1px);
       transition: transform .12s ease, border-color .12s ease;
     }
@@ -267,22 +269,24 @@
         <a href="#about">About</a>
         <a href="#focus">Focus</a>
         <a href="#criteria">Criteria</a>
-        <a href="#founder">Founder</a>
+        <a href="#owner">Owner</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
 
     <section class="hero" id="top">
       <div class="kicker"><span class="dot"></span> Management & acquisitions</div>
-      <h1>Carry businesses forward—don’t dismantle them.</h1>
+      <h1>Protect the team. Respect the legacy. Build the next chapter.</h1>
+
       <p class="lead">
-        Mae Management LLC acquires, operates, and grows established service-based businesses with durable fundamentals and long-term relevance.
-        We specialize in construction, construction management, project management, environmental services, and federal-adjacent industries.
+        Mae Management LLC is a management and acquisitions firm focused on acquiring, operating, and growing established,
+        service-based businesses with durable fundamentals and long-term relevance.
       </p>
 
       <div class="cta">
         <a class="btn primary" href="mailto:b@mae365.com">b@mae365.com</a>
-        <a class="btn" href="#about">Read more</a>
+        <a class="btn" href="#about">Learn more</a>
+        <a class="btn" href="brandon-krone-bio.pdf" target="_blank" rel="noopener">Owner bio (PDF)</a>
       </div>
     </section>
 
@@ -290,24 +294,16 @@
       <section class="card span2" id="about">
         <h2>About Mae Management LLC</h2>
         <p>
-          Mae Management LLC is a management and acquisitions firm focused on acquiring, operating, and growing established,
-          service-based businesses with durable fundamentals and long-term relevance.
+          Mae Management LLC is a management and acquisitions firm focused on acquiring, operating, and growing established, service-based businesses with durable fundamentals and long-term relevance.
         </p>
         <p style="margin-top:10px;">
-          Mae specializes in construction, construction management, project management, environmental services, and federal-adjacent
-          industries—sectors defined by real operations, skilled workforces, and critical infrastructure. These are businesses built
-          over decades, often by founders whose identities are deeply tied to what they’ve created.
+          Mae specializes in construction, construction management, project management, environmental services, and federal-adjacent industries—sectors defined by real operations, skilled workforces, and critical infrastructure. These are businesses built over decades, often by founders whose identities are deeply tied to what they’ve created.
         </p>
         <p style="margin-top:10px;">
-          Mae Management is not a short-term investment vehicle or a roll-up driven by financial engineering. The firm takes a long-term
-          ownership approach, prioritizing operational continuity, employee stability, and responsible growth. Mae seeks opportunities where
-          disciplined management, thoughtful capital deployment, and strategic advantages—such as federal certifications and Native ownership—
-          can be layered in to enhance scale without compromising culture.
+          Mae Management is not a short-term investment vehicle or a roll-up driven by financial engineering. The firm takes a long-term ownership approach, prioritizing operational continuity, employee stability, and responsible growth. Mae seeks opportunities where disciplined management, thoughtful capital deployment, and strategic advantages—such as federal certifications and Native ownership—can be layered in to enhance scale without compromising culture.
         </p>
         <p style="margin-top:10px;">
-          Each acquisition is evaluated not only on financial performance, but on leadership integrity, workforce strength, and alignment with
-          Mae’s stewardship-oriented philosophy. Mae partners with existing teams, installs professional operators where appropriate, and remains
-          actively involved at the strategic level.
+          Each acquisition is evaluated not only on financial performance, but on leadership integrity, workforce strength, and alignment with Mae’s stewardship-oriented philosophy. Mae partners with existing teams, installs professional operators where appropriate, and remains actively involved at the strategic level.
         </p>
         <p style="margin-top:10px;">
           At its core, Mae Management exists to carry businesses forward—not to dismantle them.
@@ -315,38 +311,39 @@
       </section>
 
       <section class="card" id="focus">
-        <h2>Focus</h2>
+        <h2>Primary targets</h2>
         <p>
-          Durable service businesses tied to infrastructure, mission-critical facilities, public-sector demand,
-          and long-term maintenance cycles—where operational execution and capable teams drive value.
+          We focus on sectors that align with durable demand, contracted revenue, and long-term relevance—especially where federal-adjacent positioning can create sustainable growth.
         </p>
         <ul>
-          <li>Construction and specialty trades</li>
-          <li>Construction management and project management</li>
-          <li>Environmental and government-adjacent services</li>
+          <li>Construction Management & Project Management (CM/PM)</li>
+          <li>Environmental services & remediation / compliance support</li>
+          <li>Facilities services (janitorial, maintenance, light specialty services)</li>
+          <li>…and other federal-adjacent services</li>
         </ul>
       </section>
 
       <section class="card" id="criteria">
-        <h2>Acquisition Criteria</h2>
+        <h2>Acquisition criteria</h2>
         <ul>
           <li>$500K+ in annual cash flow or earnings</li>
           <li>Established operations with a track record</li>
           <li>Recurring customers or contracted revenue</li>
           <li>Capable management or key operators in place</li>
+          <li>Healthy, explainable margins (market-rate or better)</li>
+          <li>Clear path to responsible growth</li>
           <li>Clean financials and straightforward operations</li>
         </ul>
       </section>
 
-      <section class="card span2" id="founder">
-        <h2>Founder</h2>
+      <section class="card span2" id="owner">
+        <h2>Owner</h2>
         <p>
-          <strong>Brandon Krone</strong> is the Founder & Principal of Mae Management LLC. He grew up immersed in construction with hands-on experience
-          across framing, exteriors, roofing, concrete, masonry, finish work, and architectural design, and comes from a family-owned general contracting background.
+          <strong>Brandon Krone</strong> is the Founder & Principal of Mae Management LLC. His background spans construction and business operations,
+          paired with institutional finance experience. Mae’s approach reflects disciplined execution, integrity, transparency, and stewardship—built to protect teams and carry founder legacies forward.
         </p>
         <p style="margin-top:10px;">
-          He competed as a Division I wrestler at the University of Minnesota, and later built a career in private wealth management and institutional finance,
-          with experience at Fidelity Investments and Charles Schwab—bringing a disciplined, long-term approach to capital allocation, risk management, and stewardship.
+          Based in Austin, Texas, Brandon remains actively involved at the strategic level across acquisitions and platform development.
         </p>
       </section>
 
