@@ -4,111 +4,252 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mae Management LLC</title>
-  <meta name="description" content="Mae Management LLC is a founder-led investment firm headquartered in Austin, Texas, focused on acquiring and operating durable construction management, project management, and government-adjacent businesses." />
+  <meta name="description" content="Mae Management LLC is a management and acquisitions firm headquartered in Austin, Texas, focused on long-term ownership of durable, service-based businesses." />
+
   <style>
     :root{
-      --bg:#0b1220;
-      --panel:#0f1a2f;
-      --text:#e6eaf2;
-      --muted:#a8b0c3;
-      --line:rgba(255,255,255,.10);
-      --accent:#93c5fd;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --bg: #f6f1e7;           /* warm cream */
+      --ink: #1f1a14;          /* deep brown-black */
+      --muted: #5f564d;        /* taupe */
+      --card: rgba(255,255,255,.72);
+      --line: rgba(31,26,20,.10);
+      --accent: #8b5e34;       /* warm clay */
+      --accent2:#6b4b2a;       /* darker clay */
+      --shadow: 0 18px 60px rgba(31,26,20,.12);
       --radius: 18px;
       --max: 980px;
     }
 
     *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      color: var(--ink);
       background:
-        radial-gradient(1200px 600px at 15% 10%, rgba(147,197,253,.14), transparent 55%),
-        linear-gradient(180deg, var(--bg), #070b14 70%);
-      color:var(--text);
-      line-height:1.55;
+        radial-gradient(900px 500px at 20% 10%, rgba(139,94,52,.10), transparent 60%),
+        radial-gradient(700px 420px at 85% 15%, rgba(107,75,42,.10), transparent 60%),
+        radial-gradient(900px 520px at 50% 120%, rgba(31,26,20,.08), transparent 60%),
+        linear-gradient(180deg, #fbf7ef 0%, var(--bg) 40%, #f2eadf 100%);
+      line-height:1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    a{ color:var(--accent); text-decoration:none; }
+    a{ color: var(--accent2); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
     .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:40px 22px 70px;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 34px 20px 70px;
     }
 
-    header{
+    .topbar{
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      margin-bottom:36px;
+      justify-content:space-between;
+      gap:14px;
       flex-wrap:wrap;
-      gap:12px;
+      margin-bottom: 20px;
     }
 
-    header .brand{
-      font-size:14px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:rgba(230,234,242,.9);
+    .mark{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
     }
 
-    header .location{
-      font-size:13px;
-      color:var(--muted);
+    .mark .name{
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(31,26,20,.85);
     }
 
-    section{
-      border:1px solid var(--line);
-      background:rgba(15,26,47,.65);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:34px;
-      margin-bottom:22px;
+    .mark .sub{
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    nav{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    nav a{
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    nav a:hover{
+      color: var(--ink);
+      border-color: var(--line);
+      text-decoration:none;
+      background: rgba(255,255,255,.45);
+    }
+
+    .hero{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 40px 28px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(2px 2px at 10% 20%, rgba(31,26,20,.06) 40%, transparent 41%),
+        radial-gradient(2px 2px at 30% 70%, rgba(31,26,20,.05) 40%, transparent 41%),
+        radial-gradient(2px 2px at 65% 30%, rgba(31,26,20,.05) 40%, transparent 41%),
+        radial-gradient(2px 2px at 85% 60%, rgba(31,26,20,.05) 40%, transparent 41%);
+      opacity:.65;
+      pointer-events:none;
+    }
+
+    .kicker{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(95,86,77,.95);
+      margin-bottom: 14px;
+    }
+
+    .dot{
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(139,94,52,.14);
     }
 
     h1{
-      font-size:clamp(34px,4vw,48px);
-      margin:0 0 12px;
-      letter-spacing:-0.02em;
+      position:relative;
+      margin: 0 0 12px;
+      font-size: clamp(34px, 4.2vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
     }
 
-    h2{
-      font-size:14px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      margin-bottom:14px;
-      color:rgba(230,234,242,.9);
+    .lead{
+      position:relative;
+      margin: 0 0 18px;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: rgba(31,26,20,.78);
+      font-size: 15px;
+      max-width: 82ch;
     }
 
-    p{
-      color:rgba(168,176,195,.98);
-      max-width:75ch;
-      margin-bottom:14px;
-      font-size:15px;
+    .cta{
+      position:relative;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top: 18px;
+    }
+
+    .btn{
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.55);
+      color: var(--ink);
+      font-weight: 650;
+      font-size: 14px;
+    }
+
+    .btn.primary{
+      background: rgba(139,94,52,.14);
+      border-color: rgba(139,94,52,.25);
+      color: #2a1f16;
+    }
+
+    .btn:hover{
+      text-decoration:none;
+      border-color: rgba(31,26,20,.20);
+      transform: translateY(-1px);
+      transition: transform .12s ease, border-color .12s ease;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.62);
+      box-shadow: 0 12px 40px rgba(31,26,20,.08);
+      padding: 22px;
+    }
+
+    .card h2{
+      margin: 0 0 10px;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(31,26,20,.75);
+    }
+
+    .card p{
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: rgba(31,26,20,.78);
+      font-size: 14px;
     }
 
     ul{
-      margin:12px 0 0 18px;
-      color:rgba(168,176,195,.98);
-      font-size:14px;
+      margin: 12px 0 0 18px;
+      padding: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: rgba(31,26,20,.78);
+      font-size: 14px;
     }
+    li{ margin: 8px 0; }
 
-    li{ margin:8px 0; }
+    .span2{ grid-column: 1 / -1; }
 
     footer{
+      margin-top: 18px;
+      padding: 14px 4px 0;
       display:flex;
       justify-content:space-between;
-      flex-wrap:wrap;
       gap:12px;
-      font-size:13px;
-      color:rgba(168,176,195,.8);
-      padding-top:12px;
+      flex-wrap:wrap;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 13px;
+      color: rgba(95,86,77,.95);
     }
 
-    @media(max-width:800px){
-      section{ padding:26px 20px; }
+    .fine{ color: rgba(95,86,77,.75); }
+
+    @media(max-width: 840px){
+      .hero{ padding: 30px 18px; }
+      .grid{ grid-template-columns: 1fr; }
+      .span2{ grid-column:auto; }
     }
   </style>
 </head>
@@ -116,74 +257,113 @@
 <body>
   <div class="wrap">
 
-    <header>
-      <div class="brand">Mae Management LLC</div>
-      <div class="location">Founder-led acquisitions • Austin, Texas</div>
-    </header>
+    <div class="topbar">
+      <div class="mark">
+        <div class="name">Mae Management LLC</div>
+        <div class="sub">Austin, Texas • Long-term ownership • Private & confidential</div>
+      </div>
 
-    <section>
-      <h1>Acquiring and stewarding durable, essential businesses.</h1>
-      <p>
-        Mae Management LLC is a founder-led investment firm headquartered in Austin, Texas,
-        focused on acquiring and operating established construction management, project management,
-        and government-adjacent businesses across the United States.
+      <nav>
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#criteria">Criteria</a>
+        <a href="#founder">Founder</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <section class="hero" id="top">
+      <div class="kicker"><span class="dot"></span> Management & acquisitions</div>
+      <h1>Carry businesses forward—don’t dismantle them.</h1>
+      <p class="lead">
+        Mae Management LLC acquires, operates, and grows established service-based businesses with durable fundamentals and long-term relevance.
+        We specialize in construction, construction management, project management, environmental services, and federal-adjacent industries.
       </p>
-      <p>
-        We partner with owners who value continuity, disciplined execution, and a thoughtful
-        transition for their teams and customers. Mae Management is built for long-term ownership—not
-        short-term optimization or financial engineering.
-      </p>
-      <p>
-        <strong>Contact:</strong> <a href="mailto:b@mae365.com">b@mae365.com</a>
-      </p>
+
+      <div class="cta">
+        <a class="btn primary" href="mailto:b@mae365.com">b@mae365.com</a>
+        <a class="btn" href="#about">Read more</a>
+      </div>
     </section>
 
-    <section>
-      <h2>Investment Focus</h2>
-      <p>
-        We target service-based businesses tied to infrastructure, mission-critical facilities,
-        public-sector demand, and long-term maintenance cycles—where operational execution,
-        repeat clients, and capable teams drive durable value.
-      </p>
-      <ul>
-        <li>Construction and specialty trades</li>
-        <li>Project and construction management</li>
-        <li>Environmental and government-adjacent services</li>
-      </ul>
-    </section>
+    <div class="grid">
+      <section class="card span2" id="about">
+        <h2>About Mae Management LLC</h2>
+        <p>
+          Mae Management LLC is a management and acquisitions firm focused on acquiring, operating, and growing established,
+          service-based businesses with durable fundamentals and long-term relevance.
+        </p>
+        <p style="margin-top:10px;">
+          Mae specializes in construction, construction management, project management, environmental services, and federal-adjacent
+          industries—sectors defined by real operations, skilled workforces, and critical infrastructure. These are businesses built
+          over decades, often by founders whose identities are deeply tied to what they’ve created.
+        </p>
+        <p style="margin-top:10px;">
+          Mae Management is not a short-term investment vehicle or a roll-up driven by financial engineering. The firm takes a long-term
+          ownership approach, prioritizing operational continuity, employee stability, and responsible growth. Mae seeks opportunities where
+          disciplined management, thoughtful capital deployment, and strategic advantages—such as federal certifications and Native ownership—
+          can be layered in to enhance scale without compromising culture.
+        </p>
+        <p style="margin-top:10px;">
+          Each acquisition is evaluated not only on financial performance, but on leadership integrity, workforce strength, and alignment with
+          Mae’s stewardship-oriented philosophy. Mae partners with existing teams, installs professional operators where appropriate, and remains
+          actively involved at the strategic level.
+        </p>
+        <p style="margin-top:10px;">
+          At its core, Mae Management exists to carry businesses forward—not to dismantle them.
+        </p>
+      </section>
 
-    <section>
-      <h2>Acquisition Criteria</h2>
-      <ul>
-        <li>$500K+ in annual cash flow or earnings</li>
-        <li>Established operations with a track record</li>
-        <li>Recurring customers or contracted revenue</li>
-        <li>Capable management or key operators in place</li>
-        <li>Clean financials and straightforward operations</li>
-      </ul>
-    </section>
+      <section class="card" id="focus">
+        <h2>Focus</h2>
+        <p>
+          Durable service businesses tied to infrastructure, mission-critical facilities, public-sector demand,
+          and long-term maintenance cycles—where operational execution and capable teams drive value.
+        </p>
+        <ul>
+          <li>Construction and specialty trades</li>
+          <li>Construction management and project management</li>
+          <li>Environmental and government-adjacent services</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Founder</h2>
-      <p>
-        <strong>Brandon Krone</strong> is the Founder and Principal of Mae Management LLC.
-        He brings a rare combination of hands-on construction experience and institutional
-        finance expertise.
-      </p>
-      <p>
-        Brandon grew up working in construction, studied business and architectural
-        design, and competed as a Division I wrestler at the University of Minnesota before
-        building a career in finance.
-      </p>
-      <p>
-        Mae Management was formed as a convergence of these experiences—with a commitment
-        to disciplined ownership, respect for operators, and responsible long-term stewardship.
-      </p>
-    </section>
+      <section class="card" id="criteria">
+        <h2>Acquisition Criteria</h2>
+        <ul>
+          <li>$500K+ in annual cash flow or earnings</li>
+          <li>Established operations with a track record</li>
+          <li>Recurring customers or contracted revenue</li>
+          <li>Capable management or key operators in place</li>
+          <li>Clean financials and straightforward operations</li>
+        </ul>
+      </section>
+
+      <section class="card span2" id="founder">
+        <h2>Founder</h2>
+        <p>
+          <strong>Brandon Krone</strong> is the Founder & Principal of Mae Management LLC. He grew up immersed in construction with hands-on experience
+          across framing, exteriors, roofing, concrete, masonry, finish work, and architectural design, and comes from a family-owned general contracting background.
+        </p>
+        <p style="margin-top:10px;">
+          He competed as a Division I wrestler at the University of Minnesota, and later built a career in private wealth management and institutional finance,
+          with experience at Fidelity Investments and Charles Schwab—bringing a disciplined, long-term approach to capital allocation, risk management, and stewardship.
+        </p>
+      </section>
+
+      <section class="card span2" id="contact">
+        <h2>Contact</h2>
+        <p>
+          Confidential conversations welcomed. If you’re considering a transition—or you represent a business aligned with Mae’s focus—reach out.
+        </p>
+        <ul>
+          <li><a href="mailto:b@mae365.com">b@mae365.com</a></li>
+        </ul>
+      </section>
+    </div>
 
     <footer>
       <div>© <span id="year"></span> Mae Management LLC</div>
-      <div>Private • Confidential • Long-Term Oriented</div>
+      <div class="fine">Austin, Texas • Private • Confidential • Long-term ownership</div>
     </footer>
 
   </div>
