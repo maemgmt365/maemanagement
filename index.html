@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,7 @@
 
   <style>
     :root{
+      /* LIGHT (default) */
       --bg: #f6f1e7;           /* warm cream */
       --ink: #1f1a14;          /* deep brown-black */
       --muted: #5f564d;        /* taupe */
@@ -19,10 +20,51 @@
       --shadow: 0 18px 60px rgba(31,26,20,.12);
       --radius: 18px;
       --max: 980px;
+
+      --navHoverBg: rgba(255,255,255,.45);
+      --btnBg: rgba(255,255,255,.55);
+      --btnPrimaryBg: rgba(139,94,52,.14);
+      --btnPrimaryBorder: rgba(139,94,52,.25);
+      --btnPrimaryInk: #2a1f16;
+      --dotRing: rgba(79,111,91,.16);
+      --heroTexture1: rgba(31,26,20,.06);
+      --heroTexture2: rgba(31,26,20,.05);
+      --bodyGradTop: #fbf7ef;
+      --bodyGradBottom: #f2eadf;
+    }
+
+    /* DARK THEME */
+    [data-theme="dark"]{
+      --bg: #0f1110;
+      --ink: rgba(245,240,232,.92);
+      --muted: rgba(245,240,232,.70);
+
+      --card: rgba(26,24,22,.78);
+      --line: rgba(245,240,232,.14);
+
+      /* keep your clay/sage identity, just richer */
+      --accent: #c28a56;     /* warm clay */
+      --accent2:#b87a43;     /* darker clay */
+      --accent3:#79a187;     /* sage */
+      --shadow: 0 18px 70px rgba(0,0,0,.55);
+
+      --navHoverBg: rgba(255,255,255,.06);
+      --btnBg: rgba(255,255,255,.06);
+      --btnPrimaryBg: rgba(194,138,86,.16);
+      --btnPrimaryBorder: rgba(194,138,86,.30);
+      --btnPrimaryInk: rgba(245,240,232,.92);
+      --dotRing: rgba(121,161,135,.16);
+
+      --heroTexture1: rgba(245,240,232,.05);
+      --heroTexture2: rgba(245,240,232,.04);
+
+      --bodyGradTop: #121312;
+      --bodyGradBottom: #0b0c0b;
     }
 
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
+
     body{
       margin:0;
       font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
@@ -31,7 +73,7 @@
         radial-gradient(900px 500px at 20% 10%, rgba(139,94,52,.10), transparent 60%),
         radial-gradient(700px 420px at 85% 15%, rgba(79,111,91,.10), transparent 60%),
         radial-gradient(900px 520px at 50% 120%, rgba(31,26,20,.08), transparent 60%),
-        linear-gradient(180deg, #fbf7ef 0%, var(--bg) 40%, #f2eadf 100%);
+        linear-gradient(180deg, var(--bodyGradTop) 0%, var(--bg) 40%, var(--bodyGradBottom) 100%);
       line-height:1.6;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -68,11 +110,21 @@
       text-transform: uppercase;
       color: rgba(31,26,20,.85);
     }
+    [data-theme="dark"] .mark .name{
+      color: rgba(245,240,232,.88);
+    }
 
     .mark .sub{
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       font-size: 13px;
       color: var(--muted);
+    }
+
+    .rightControls{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
     }
 
     nav{
@@ -93,7 +145,27 @@
       color: var(--ink);
       border-color: var(--line);
       text-decoration:none;
-      background: rgba(255,255,255,.45);
+      background: var(--navHoverBg);
+    }
+
+    .themeToggle{
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--btnBg);
+      color: var(--ink);
+      font-size: 13px;
+      cursor: pointer;
+      user-select:none;
+    }
+    .themeToggle:hover{
+      border-color: rgba(79,111,91,.35);
+      text-decoration:none;
     }
 
     .hero{
@@ -112,10 +184,10 @@
       position:absolute;
       inset:-2px;
       background:
-        radial-gradient(2px 2px at 10% 20%, rgba(31,26,20,.06) 40%, transparent 41%),
-        radial-gradient(2px 2px at 30% 70%, rgba(31,26,20,.05) 40%, transparent 41%),
-        radial-gradient(2px 2px at 65% 30%, rgba(31,26,20,.05) 40%, transparent 41%),
-        radial-gradient(2px 2px at 85% 60%, rgba(31,26,20,.05) 40%, transparent 41%);
+        radial-gradient(2px 2px at 10% 20%, var(--heroTexture1) 40%, transparent 41%),
+        radial-gradient(2px 2px at 30% 70%, var(--heroTexture2) 40%, transparent 41%),
+        radial-gradient(2px 2px at 65% 30%, var(--heroTexture2) 40%, transparent 41%),
+        radial-gradient(2px 2px at 85% 60%, var(--heroTexture2) 40%, transparent 41%);
       opacity:.65;
       pointer-events:none;
     }
@@ -132,12 +204,15 @@
       color: rgba(95,86,77,.95);
       margin-bottom: 14px;
     }
+    [data-theme="dark"] .kicker{
+      color: rgba(245,240,232,.72);
+    }
 
     .dot{
       width: 8px; height: 8px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(79,111,91,.16);
+      box-shadow: 0 0 0 6px var(--dotRing);
     }
 
     h1{
@@ -156,6 +231,9 @@
       font-size: 15px;
       max-width: 88ch;
     }
+    [data-theme="dark"] .lead{
+      color: rgba(245,240,232,.78);
+    }
 
     .cta{
       position:relative;
@@ -173,16 +251,16 @@
       padding: 12px 14px;
       border-radius: 12px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.55);
+      background: var(--btnBg);
       color: var(--ink);
       font-weight: 650;
       font-size: 14px;
     }
 
     .btn.primary{
-      background: rgba(139,94,52,.14);
-      border-color: rgba(139,94,52,.25);
-      color: #2a1f16;
+      background: var(--btnPrimaryBg);
+      border-color: var(--btnPrimaryBorder);
+      color: var(--btnPrimaryInk);
     }
 
     .btn:hover{
@@ -206,6 +284,10 @@
       box-shadow: 0 12px 40px rgba(31,26,20,.08);
       padding: 22px;
     }
+    [data-theme="dark"] .card{
+      background: rgba(26,24,22,.70);
+      box-shadow: 0 12px 44px rgba(0,0,0,.40);
+    }
 
     .card h2{
       margin: 0 0 10px;
@@ -215,12 +297,18 @@
       text-transform: uppercase;
       color: rgba(31,26,20,.75);
     }
+    [data-theme="dark"] .card h2{
+      color: rgba(245,240,232,.74);
+    }
 
     .card p{
       margin: 0;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: rgba(31,26,20,.78);
       font-size: 14px;
+    }
+    [data-theme="dark"] .card p{
+      color: rgba(245,240,232,.78);
     }
 
     ul{
@@ -229,6 +317,9 @@
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: rgba(31,26,20,.78);
       font-size: 14px;
+    }
+    [data-theme="dark"] ul{
+      color: rgba(245,240,232,.78);
     }
     li{ margin: 8px 0; }
 
@@ -245,8 +336,12 @@
       font-size: 13px;
       color: rgba(95,86,77,.95);
     }
+    [data-theme="dark"] footer{
+      color: rgba(245,240,232,.70);
+    }
 
     .fine{ color: rgba(95,86,77,.75); }
+    [data-theme="dark"] .fine{ color: rgba(245,240,232,.55); }
 
     @media(max-width: 840px){
       .hero{ padding: 30px 18px; }
@@ -265,13 +360,19 @@
         <div class="sub">Austin, Texas • Long-term ownership • Private & confidential</div>
       </div>
 
-      <nav>
-        <a href="#about">About</a>
-        <a href="#focus">Focus</a>
-        <a href="#criteria">Criteria</a>
-        <a href="#owner">Owner</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="rightControls">
+        <nav>
+          <a href="#about">About</a>
+          <a href="#focus">Focus</a>
+          <a href="#criteria">Criteria</a>
+          <a href="#owner">Owner</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="themeToggle" type="button" onclick="toggleTheme()" aria-label="Toggle day and night mode">
+          <span id="themeIcon">☾</span>
+        </button>
+      </div>
     </div>
 
     <section class="hero" id="top">
@@ -302,19 +403,17 @@
         <p style="margin-top:10px;">
           Mae Management is not a short-term investment vehicle or a roll-up driven by financial engineering. The firm takes a long-term ownership approach, prioritizing operational continuity, employee stability, and responsible growth. Mae seeks opportunities where disciplined management, thoughtful capital deployment, and strategic advantages—such as federal certifications and Native ownership—can be layered in to enhance scale without compromising culture.
         </p>
-       <p style="margin-top:10px;">
-  Each acquisition is evaluated not only on financial performance, but on leadership integrity, workforce strength, and alignment with
-  Mae’s stewardship-oriented philosophy. Mae partners with existing teams, installs professional operators where appropriate, and remains
-  actively involved at the strategic level.
-</p>
-
-<p style="margin-top:10px;">
-  Mae engages directly with owners, evaluates opportunities confidentially, and structures transactions to support continuity for teams and customers.
-</p>
-
-<p style="margin-top:10px;">
-  At its core, Mae Management exists to carry businesses forward—not to dismantle them.
-</p>
+        <p style="margin-top:10px;">
+          Each acquisition is evaluated not only on financial performance, but on leadership integrity, workforce strength, and alignment with
+          Mae’s stewardship-oriented philosophy. Mae partners with existing teams, installs professional operators where appropriate, and remains
+          actively involved at the strategic level.
+        </p>
+        <p style="margin-top:10px;">
+          Mae engages directly with owners, evaluates opportunities confidentially, and structures transactions to support continuity for teams and customers.
+        </p>
+        <p style="margin-top:10px;">
+          At its core, Mae Management exists to carry businesses forward—not to dismantle them.
+        </p>
       </section>
 
       <section class="card" id="focus">
@@ -344,48 +443,35 @@
       </section>
 
       <section class="card span2" id="owner">
-  <h2>Owner</h2>
+        <h2>Owner</h2>
 
-  <div style="
-    display:flex;
-    gap:24px;
-    align-items:flex-start;
-    flex-wrap:wrap;
-  ">
+        <div style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;">
+          <img 
+            src="1e3a8cb2bf922aa1b9f3f852b8ec0b2c32a469580d44b8798b9c80ca31c502ff.jpeg"
+            alt="Brandon Krone, Founder and Principal of Mae Management LLC"
+            style="width:140px; height:140px; object-fit:cover; border-radius:50%; flex-shrink:0;"
+          >
 
-    <img 
-      src="1e3a8cb2bf922aa1b9f3f852b8ec0b2c32a469580d44b8798b9c80ca31c502ff.jpeg"
-      alt="Brandon Krone, Founder and Principal of Mae Management LLC"
-      style="
-        width:140px;
-        height:140px;
-        object-fit:cover;
-        border-radius:50%;
-        flex-shrink:0;
-      "
-    >
+          <div style="flex:1; min-width:260px;">
+            <p style="margin:0; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-weight:700; font-size:16px; color: rgba(31,26,20,.90);">
+              Brandon Krone
+            </p>
 
-    <div style="flex:1; min-width:260px;">
-      <p style="margin:0; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-weight:700; font-size:16px; color: rgba(31,26,20,.90);">
-        Brandon Krone
-      </p>
+            <p style="margin:6px 0 12px; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: rgba(95,86,77,.95);">
+              Founder & Principal, Mae Management LLC
+            </p>
 
-      <p style="margin:6px 0 12px; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: rgba(95,86,77,.95);">
-        Founder & Principal, Mae Management LLC
-      </p>
+            <p style="margin:0; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: rgba(31,26,20,.78); font-size:14px;">
+              Brandon Krone is the Founder and Principal of Mae Management LLC. His background spans construction and business operations,
+              paired with institutional finance experience. Mae’s approach reflects disciplined execution, integrity, transparency, and stewardship—built to protect teams and carry founder legacies forward.
+            </p>
 
-      <p style="margin:0; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: rgba(31,26,20,.78); font-size:14px;">
-        Brandon Krone is the Founder and Principal of Mae Management LLC. His background spans construction and business operations,
-        paired with institutional finance experience. Mae’s approach reflects disciplined execution, integrity, transparency, and stewardship—built to protect teams and carry founder legacies forward.
-      </p>
-
-      <p style="margin-top:10px; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: rgba(31,26,20,.78); font-size:14px;">
-        Based in Austin, Texas, Brandon remains actively involved at the strategic level across acquisitions and platform development.
-      </p>
-    </div>
-
-  </div>
-</section>
+            <p style="margin-top:10px; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: rgba(31,26,20,.78); font-size:14px;">
+              Based in Austin, Texas, Brandon remains actively involved at the strategic level across acquisitions and platform development.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section class="card span2" id="contact">
         <h2>Contact</h2>
@@ -407,6 +493,32 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const root = document.documentElement;
+    const icon = document.getElementById("themeIcon");
+
+    function applyTheme(theme){
+      root.setAttribute("data-theme", theme);
+      if (icon) icon.textContent = (theme === "dark") ? "☀︎" : "☾";
+    }
+
+    function toggleTheme(){
+      const current = root.getAttribute("data-theme") || "light";
+      const next = (current === "dark") ? "light" : "dark";
+      applyTheme(next);
+      localStorage.setItem("theme", next);
+    }
+
+    // Load saved theme OR match system preference on first visit
+    (function initTheme(){
+      const saved = localStorage.getItem("theme");
+      if (saved){
+        applyTheme(saved);
+        return;
+      }
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      applyTheme(prefersDark ? "dark" : "light");
+    })();
   </script>
 </body>
 </html>
