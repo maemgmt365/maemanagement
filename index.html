@@ -21,6 +21,20 @@
       --radius: 18px;
       --max: 980px;
 
+      .themeToggle span{
+  transition: opacity .15s ease, font-weight .15s ease;
+}
+
+.themeToggle .active{
+  opacity: .95;
+  font-weight: 700;
+}
+
+.themeToggle .inactive{
+  opacity: .35;
+  font-weight: 400;
+}
+      
       --navHoverBg: rgba(255,255,255,.45);
       --btnBg: rgba(255,255,255,.55);
       --btnPrimaryBg: rgba(139,94,52,.14);
@@ -370,8 +384,10 @@
         </nav>
 
         <button class="themeToggle" type="button" onclick="toggleTheme()" aria-label="Toggle day and night mode">
-          <span id="themeIcon">☾</span>
-        </button>
+  <span id="iconLight">☀︎</span>
+  <span style="opacity:.55;">/</span>
+  <span id="iconDark">☾</span>
+</button>
       </div>
     </div>
 
@@ -492,33 +508,44 @@
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    const root = document.documentElement;
-    const icon = document.getElementById("themeIcon");
+  const root = document.documentElement;
+  const iconLight = document.getElementById("iconLight");
+  const iconDark  = document.getElementById("iconDark");
 
-    function applyTheme(theme){
-      root.setAttribute("data-theme", theme);
-      if (icon) icon.textContent = (theme === "dark") ? "☀︎" : "☾";
+  function setActiveIcons(theme){
+    if(theme === "dark"){
+      iconDark.className = "active";
+      iconLight.className = "inactive";
+    } else {
+      iconLight.className = "active";
+      iconDark.className = "inactive";
     }
+  }
 
-    function toggleTheme(){
-      const current = root.getAttribute("data-theme") || "light";
-      const next = (current === "dark") ? "light" : "dark";
-      applyTheme(next);
-      localStorage.setItem("theme", next);
+  function applyTheme(theme){
+    root.setAttribute("data-theme", theme);
+    setActiveIcons(theme);
+  }
+
+  function toggleTheme(){
+    const current = root.getAttribute("data-theme") || "light";
+    const next = (current === "dark") ? "light" : "dark";
+    applyTheme(next);
+    localStorage.setItem("theme", next);
+  }
+
+  (function initTheme(){
+    const saved = localStorage.getItem("theme");
+    if (saved){
+      applyTheme(saved);
+      return;
     }
-
-    // Load saved theme OR match system preference on first visit
-    (function initTheme(){
-      const saved = localStorage.getItem("theme");
-      if (saved){
-        applyTheme(saved);
-        return;
-      }
-      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      applyTheme(prefersDark ? "dark" : "light");
-    })();
-  </script>
+    const prefersDark = window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    applyTheme(prefersDark ? "dark" : "light");
+  })();
+</script>
 </body>
 </html>
