@@ -23,9 +23,6 @@
 
       --navHoverBg: rgba(255,255,255,.45);
       --btnBg: rgba(255,255,255,.55);
-      --btnPrimaryBg: rgba(139,94,52,.14);
-      --btnPrimaryBorder: rgba(139,94,52,.25);
-      --btnPrimaryInk: #2a1f16;
       --dotRing: rgba(79,111,91,.16);
       --heroTexture1: rgba(31,26,20,.06);
       --heroTexture2: rgba(31,26,20,.05);
@@ -42,17 +39,14 @@
       --card: rgba(26,24,22,.78);
       --line: rgba(245,240,232,.14);
 
-      /* keep your clay/sage identity, just richer */
-      --accent: #c28a56;     /* warm clay */
-      --accent2:#b87a43;     /* darker clay */
-      --accent3:#79a187;     /* sage */
+      /* keep clay/sage identity, richer */
+      --accent: #c28a56;
+      --accent2:#b87a43;
+      --accent3:#79a187;
       --shadow: 0 18px 70px rgba(0,0,0,.55);
 
       --navHoverBg: rgba(255,255,255,.06);
       --btnBg: rgba(255,255,255,.06);
-      --btnPrimaryBg: rgba(194,138,86,.16);
-      --btnPrimaryBorder: rgba(194,138,86,.30);
-      --btnPrimaryInk: rgba(245,240,232,.92);
       --dotRing: rgba(121,161,135,.16);
 
       --heroTexture1: rgba(245,240,232,.05);
@@ -167,31 +161,20 @@
       border-color: rgba(79,111,91,.35);
       text-decoration:none;
     }
-
-    /* Toggle active state (MOVED OUT of :root — this fixes your CSS) */
-    .themeToggle span{
-      transition: opacity .15s ease, font-weight .15s ease;
-    }
-    .themeToggle .active{
-      opacity: .95;
-      font-weight: 700;
-    }
-    .themeToggle .inactive{
-      opacity: .35;
-      font-weight: 400;
-    }
+    .themeToggle span{ transition: opacity .15s ease, font-weight .15s ease; }
+    .themeToggle .active{ opacity:.95; font-weight:700; }
+    .themeToggle .inactive{ opacity:.35; font-weight:400; }
 
     .hero{
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--card);
       box-shadow: var(--shadow);
-      padding: 40px 28px;
+      padding: 44px 28px;
       position:relative;
       overflow:hidden;
     }
 
-    /* subtle stone texture */
     .hero:before{
       content:"";
       position:absolute;
@@ -238,7 +221,7 @@
 
     .lead{
       position:relative;
-      margin: 0 0 18px;
+      margin: 0;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: rgba(31,26,20,.78);
       font-size: 15px;
@@ -246,41 +229,6 @@
     }
     [data-theme="dark"] .lead{
       color: rgba(245,240,232,.78);
-    }
-
-    .cta{
-      position:relative;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top: 18px;
-    }
-
-    .btn{
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: var(--btnBg);
-      color: var(--ink);
-      font-weight: 650;
-      font-size: 14px;
-    }
-
-    .btn.primary{
-      background: var(--btnPrimaryBg);
-      border-color: var(--btnPrimaryBorder);
-      color: var(--btnPrimaryInk);
-    }
-
-    .btn:hover{
-      text-decoration:none;
-      border-color: rgba(79,111,91,.35);
-      transform: translateY(-1px);
-      transition: transform .12s ease, border-color .12s ease;
     }
 
     .grid{
@@ -338,6 +286,66 @@
 
     .span2{ grid-column: 1 / -1; }
 
+    .profileRow{
+      display:flex;
+      gap:24px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .avatar{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      flex-shrink:0;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(31,26,20,.10);
+    }
+    [data-theme="dark"] .avatar{
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    .metaName{
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-weight:700;
+      font-size:16px;
+      color: var(--ink);
+    }
+    .metaTitle{
+      margin:6px 0 10px;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--muted);
+      font-size:14px;
+    }
+    .metaBody{
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink);
+      font-size:14px;
+    }
+
+    .linkBtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:12px;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 650;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--btnBg);
+      color: var(--ink);
+    }
+    .linkBtn:hover{
+      text-decoration:none;
+      border-color: rgba(79,111,91,.35);
+      transform: translateY(-1px);
+      transition: transform .12s ease, border-color .12s ease;
+    }
+
     footer{
       margin-top: 18px;
       padding: 14px 4px 0;
@@ -357,7 +365,7 @@
     [data-theme="dark"] .fine{ color: rgba(245,240,232,.55); }
 
     @media(max-width: 840px){
-      .hero{ padding: 30px 18px; }
+      .hero{ padding: 34px 18px; }
       .grid{ grid-template-columns: 1fr; }
       .span2{ grid-column:auto; }
     }
@@ -379,6 +387,7 @@
           <a href="#focus">Focus</a>
           <a href="#criteria">Criteria</a>
           <a href="#owner">Owner</a>
+          <a href="#team">Team</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -398,12 +407,6 @@
         Mae Management LLC is a management and acquisitions firm focused on acquiring, operating, and growing established,
         service-based businesses with durable fundamentals and long-term relevance.
       </p>
-
-      <div class="cta">
-        <a class="btn primary" href="mailto:b@mae365.com">b@mae365.com</a>
-        <a class="btn" href="#about">Learn more</a>
-        <a class="btn" href="brandon-krone-bio.pdf" target="_blank" rel="noopener">Owner bio (PDF)</a>
-      </div>
     </section>
 
     <div class="grid">
@@ -460,29 +463,46 @@
       <section class="card span2" id="owner">
         <h2>Owner</h2>
 
-        <div style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;">
-          <img 
+        <div class="profileRow">
+          <!-- NOTE: keep your existing Brandon image filename here -->
+          <img
+            class="avatar"
             src="1e3a8cb2bf922aa1b9f3f852b8ec0b2c32a469580d44b8798b9c80ca31c502ff.jpeg"
             alt="Brandon Krone, Founder and Principal of Mae Management LLC"
-            style="width:140px; height:140px; object-fit:cover; border-radius:50%; flex-shrink:0;"
-          >
+          />
 
           <div style="flex:1; min-width:260px;">
-            <p style="margin:0; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-weight:700; font-size:16px; color: var(--ink);">
-              Brandon Krone
-            </p>
+            <p class="metaName">Brandon Krone</p>
+            <p class="metaTitle">Founder & Principal, Mae Management LLC • Austin, Texas</p>
 
-            <p style="margin:6px 0 12px; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: var(--muted);">
-              Founder & Principal, Mae Management LLC
-            </p>
-
-            <p style="margin:0; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: var(--ink); font-size:14px;">
+            <p class="metaBody">
               Brandon Krone is the Founder and Principal of Mae Management LLC. His background spans construction and business operations,
               paired with institutional finance experience. Mae’s approach reflects disciplined execution, integrity, transparency, and stewardship—built to protect teams and carry founder legacies forward.
             </p>
 
-            <p style="margin-top:10px; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: var(--ink); font-size:14px;">
-              Based in Austin, Texas, Brandon remains actively involved at the strategic level across acquisitions and platform development.
+            <a class="linkBtn" href="brandon-krone.html">View full bio →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card span2" id="team">
+        <h2>Team</h2>
+
+        <div class="profileRow">
+          <img
+            class="avatar"
+            src="IMG_0617.jpeg"
+            alt="Douglas McArthur, Acquisitions Associate at Mae Management LLC"
+          />
+
+          <div style="flex:1; min-width:260px;">
+            <p class="metaName">Douglas McArthur</p>
+            <p class="metaTitle">Acquisitions Associate • Boca Raton, Florida</p>
+
+            <p class="metaBody">
+              Douglas is an Acquisitions Associate at Mae Management, focused on sourcing and vetting high-quality acquisition opportunities.
+              With hands-on experience in construction, sales, and real estate strategy, he approaches underwriting with discipline and a strong
+              bias toward action. He is committed to building durable platforms through thoughtful, high-conviction investments.
             </p>
           </div>
         </div>
