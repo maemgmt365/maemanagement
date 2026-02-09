@@ -4,21 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brandon Krone — Mae Management LLC</title>
-  <meta name="description" content="Brandon Krone is the Founder & Principal of Mae Management LLC, a long-term ownership and acquisitions platform focused on durable, service-based businesses." />
+  <meta name="description" content="Brandon Krone is the Founder & Principal of Mae Management LLC." />
 
   <style>
     :root{
-      --bg:#f6f1e7;
-      --ink:#1f1a14;
-      --muted:#5f564d;
+      /* LIGHT (default) */
+      --bg: #f6f1e7;           /* warm cream */
+      --ink: #1f1a14;          /* deep brown-black */
+      --muted: #5f564d;        /* taupe */
       --card: rgba(255,255,255,.74);
       --line: rgba(31,26,20,.10);
-      --accent:#8b5e34;
-      --accent2:#6b4b2a;
-      --accent3:#4f6f5b;
+      --accent: #8b5e34;       /* clay */
+      --accent2:#6b4b2a;       /* darker clay */
+      --accent3:#4f6f5b;       /* sage */
       --shadow: 0 18px 60px rgba(31,26,20,.12);
       --radius: 18px;
       --max: 980px;
+
       --navHoverBg: rgba(255,255,255,.45);
       --btnBg: rgba(255,255,255,.55);
       --dotRing: rgba(79,111,91,.16);
@@ -27,21 +29,28 @@
       --bodyGradTop: #fbf7ef;
       --bodyGradBottom: #f2eadf;
     }
+
+    /* DARK THEME */
     [data-theme="dark"]{
-      --bg:#0f1110;
+      --bg: #0f1110;
       --ink: rgba(245,240,232,.92);
       --muted: rgba(245,240,232,.70);
+
       --card: rgba(26,24,22,.78);
       --line: rgba(245,240,232,.14);
-      --accent:#c28a56;
+
+      --accent: #c28a56;
       --accent2:#b87a43;
       --accent3:#79a187;
       --shadow: 0 18px 70px rgba(0,0,0,.55);
+
       --navHoverBg: rgba(255,255,255,.06);
       --btnBg: rgba(255,255,255,.06);
       --dotRing: rgba(121,161,135,.16);
+
       --heroTexture1: rgba(245,240,232,.05);
       --heroTexture2: rgba(245,240,232,.04);
+
       --bodyGradTop: #121312;
       --bodyGradBottom: #0b0c0b;
     }
@@ -86,6 +95,7 @@
       flex-direction:column;
       gap:4px;
     }
+
     .mark .name{
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       font-size: 13px;
@@ -93,14 +103,22 @@
       text-transform: uppercase;
       color: rgba(31,26,20,.85);
     }
-    [data-theme="dark"] .mark .name{ color: rgba(245,240,232,.88); }
+    [data-theme="dark"] .mark .name{
+      color: rgba(245,240,232,.88);
+    }
+
     .mark .sub{
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       font-size: 13px;
       color: var(--muted);
     }
 
-    .rightControls{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .rightControls{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
 
     nav{
       display:flex;
@@ -138,7 +156,10 @@
       cursor: pointer;
       user-select:none;
     }
-    .themeToggle:hover{ border-color: rgba(79,111,91,.35); text-decoration:none; }
+    .themeToggle:hover{
+      border-color: rgba(79,111,91,.35);
+      text-decoration:none;
+    }
     .themeToggle span{ transition: opacity .15s ease, font-weight .15s ease; }
     .themeToggle .active{ opacity:.95; font-weight:700; }
     .themeToggle .inactive{ opacity:.35; font-weight:400; }
@@ -152,6 +173,7 @@
       position:relative;
       overflow:hidden;
     }
+
     .hero:before{
       content:"";
       position:absolute;
@@ -175,9 +197,12 @@
       letter-spacing: .16em;
       text-transform: uppercase;
       color: rgba(95,86,77,.95);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
-    [data-theme="dark"] .kicker{ color: rgba(245,240,232,.72); }
+    [data-theme="dark"] .kicker{
+      color: rgba(245,240,232,.72);
+    }
+
     .dot{
       width: 8px; height: 8px;
       border-radius: 50%;
@@ -192,13 +217,14 @@
       line-height: 1.08;
       letter-spacing: -0.02em;
     }
+
     .lead{
       position:relative;
       margin: 0;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: rgba(31,26,20,.78);
       font-size: 15px;
-      max-width: 90ch;
+      max-width: 88ch;
     }
     [data-theme="dark"] .lead{ color: rgba(245,240,232,.78); }
 
@@ -216,7 +242,7 @@
     }
 
     .content h2{
-      margin: 0 0 10px;
+      margin: 0 0 12px;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       font-size: 12px;
       letter-spacing: .16em;
@@ -226,7 +252,7 @@
     [data-theme="dark"] .content h2{ color: rgba(245,240,232,.74); }
 
     .content p{
-      margin: 0 0 12px;
+      margin: 0 0 14px;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: rgba(31,26,20,.82);
       font-size: 14px;
@@ -234,6 +260,41 @@
     }
     [data-theme="dark"] .content p{ color: rgba(245,240,232,.82); }
     .content p:last-child{ margin-bottom: 0; }
+
+    .profileRow{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      margin-bottom: 14px;
+    }
+
+    .avatar{
+      width:110px;
+      height:110px;
+      border-radius:50%;
+      object-fit:cover;
+      flex-shrink:0;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(31,26,20,.10);
+    }
+    [data-theme="dark"] .avatar{
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    .metaName{
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-weight:800;
+      font-size:16px;
+      color: var(--ink);
+    }
+    .metaTitle{
+      margin:6px 0 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--muted);
+      font-size:14px;
+    }
 
     footer{
       margin-top: 18px;
@@ -276,31 +337,60 @@
     </div>
 
     <section class="hero">
-      <div class="kicker"><span class="dot"></span> Founder</div>
+      <div class="kicker"><span class="dot"></span> Owner bio</div>
       <h1>Brandon Krone</h1>
       <p class="lead">Founder & Principal, Mae Management LLC</p>
     </section>
 
     <section class="content">
-      <h2>Full bio</h2>
-      <p>
-        Brandon Krone is the Founder and Principal of Mae Management LLC, a management and acquisitions platform focused on long-term ownership of durable, service-based businesses—primarily within construction, construction management, project management, and federal-adjacent industries.
-      </p>
-      <p>
-        Brandon’s foundation was built early and hands-on. He grew up immersed in construction, working summers framing homes in Minnesota and gaining firsthand exposure across major trades. That experience instilled a deep respect for craftsmanship, operating discipline, and the people who build and maintain businesses from the ground up.
-      </p>
-      <p>
-        He competed as a Division I wrestler at the University of Minnesota—an experience that shaped his approach to leadership: consistency, discipline, and doing hard things repeatedly.
-      </p>
-      <p>
-        After college, Brandon built a career in finance across private wealth and institutional environments, including roles at Fidelity Investments and Charles Schwab. The work sharpened his framework for risk, capital allocation, and long-term decision-making.
-      </p>
-      <p>
-        Mae Management was founded as a convergence of Brandon’s background in construction, finance, and long-term stewardship. Mae is not a short-term investment vehicle or a roll-up driven by financial engineering. The priority is operational continuity, employee stability, and responsible growth—built on trust and follow-through.
-      </p>
-      <p>
-        Brandon is based in Austin, Texas and remains actively involved at the strategic level across acquisitions and platform development.
-      </p>
+      <h2>Brandon Krone</h2>
+
+      <div class="profileRow">
+        <img
+          class="avatar"
+          src="1e3a8cb2bf922aa1b9f3f852b8ec0b2c32a469580d44b8798b9c80ca31c502ff.jpeg"
+          alt="Brandon Krone, Founder & Principal of Mae Management LLC"
+        />
+        <div>
+          <p class="metaName">Brandon Krone</p>
+          <p class="metaTitle">Founder & Principal, Mae Management LLC</p>
+        </div>
+      </div>
+
+      <!-- EXACT TEXT BELOW (no rewrites) -->
+      <p>Brandon Krone<br/>
+      Founder & Principal, Mae Management LLC</p>
+
+      <p>Brandon Krone is the Founder and Principal of Mae Management LLC, a management and acquisitions platform focused on acquiring and stewarding durable, service-based businesses—primarily within construction, project management, and federal-adjacent industries.</p>
+
+      <p>Brandon’s foundation was built early and hands-on. He grew up immersed in construction, working summers framing homes in Minnesota and gaining firsthand experience across nearly every major trade—exteriors, roofing, windows and doors, concrete, masonry, and finish work. His family operates a general contracting business, and his father spent most of his life as a journeyman carpenter before building that company alongside Brandon’s brother. That exposure instilled a deep respect for craftsmanship, operating discipline, and the people who actually build and maintain businesses from the ground up.</p>
+
+      <p>Alongside this practical background, Brandon studied architectural design in college and competed as a Division I wrestler at the University of Minnesota. Wrestling proved formative—not just as a sport, but as a philosophy. The discipline of doing hard things repeatedly, operating with consistency whether anyone is watching or not, and developing confidence through action continues to shape how he approaches business and leadership today.</p>
+
+      <p>After college, Brandon’s path shifted from the jobsite to finance. He launched a financial practice immediately after graduating, later moving into more institutional roles at Fidelity Investments and ultimately Charles Schwab. Across these environments, he advised clients, supported complex financial decisions, and developed a disciplined framework for risk, capital allocation, and long-term planning. In parallel, he remained closely involved with startups and entrepreneurial projects, maintaining a persistent interest in building and owning businesses rather than simply advising them.</p>
+
+      <p>Several experiences profoundly shaped Brandon’s worldview. The influence of coaches and mentors reinforced the belief that character matters most when no one is watching. His mother’s passing in 2021 deeply clarified the finitude of time and reinforced a core conviction: people matter more than assets. Despite growing up without significant financial resources, his family was rich in love and values—an insight that now anchors how he approaches ownership, leadership, and relationships. More recently, relocating to Austin brought him into a community of disciplined, creative, and driven individuals who reinforced his belief that excellence thrives in environments that are both demanding and supportive.</p>
+
+      <p>Those who work closely with Brandon often describe him as consistent, disciplined, reliable, transparent, and deeply supportive—paired with a blunt, direct communication style and an unusually high work output. He is demanding but fair, exacting but loyal, and places a premium on trust and follow-through.</p>
+
+      <p>Mae Management was founded as a natural convergence of Brandon’s background in construction, finance, and long-term stewardship. Through years of advising clients and friends through business exits—some positive, others deeply flawed—he recognized that acquisitions mirror wealth management in principle but demand far greater specificity, responsibility, and human consideration. What began as intellectual curiosity quickly became conviction.</p>
+
+      <p>The name “Mae” holds personal and symbolic meaning. It honors his late mother’s middle name, while also standing for Mergers, Acquisitions, and Exits. More importantly, it reflects the mission: to carry forward what others have built, honor existing legacies, and responsibly grow businesses for the long term. The clarity around this purpose marked a defining moment—one that confirmed he was building something aligned with both his values and his future.</p>
+
+      <p>Mae Management focuses on acquiring established, recession-resilient, service-based businesses—particularly in construction, construction management, project management, environmental services, and federal contracting-adjacent sectors. These are businesses with real operators, real employees, and real communities behind them. Mae seeks opportunities where thoughtful leadership, operational discipline, and strategic advantages—such as Native ownership and federal certifications—can be layered in to create sustainable growth without compromising culture or integrity.</p>
+
+      <p>Brandon is not interested in hostile takeovers, short-term flips, or extractive ownership models. While Mae Management employs professional operators and general managers to run day-to-day operations, he remains deeply involved at the strategic level. His goal is to be a reliable steward—someone sellers can trust, employees can rely on, and partners can build alongside.</p>
+
+      <p>Looking ahead, Brandon envisions Mae Management evolving into a scaled federal contracting and services platform—one capable of internal collaboration, joint ventures, and long-term career creation for hundreds or thousands of employees. The ambition is significant, but the approach remains grounded: disciplined growth, patient capital, and unwavering commitment to people.</p>
+
+      <p><strong>Beyond Work</strong></p>
+
+      <p>Outside of business, Brandon lives by the same principles he applies professionally: discipline, consistency, and long-term health. He has not missed a day of training in over four years and remains deeply committed to physical and mental longevity. His routine includes strength training, wrestling, Brazilian jiu-jitsu, and boxing, and he actively coaches wrestling at a local gym in Austin.</p>
+
+      <p>Much of Brandon’s community is rooted in this training environment—spaces defined by accountability, effort, and mutual respect. When not working or training, he spends time outdoors with his two huskies, Cassius and Polo, who have been with him since they were puppies. He also enjoys trading, reading, cooking, traveling, biohacking, and continuously learning new skills.</p>
+
+      <p>At the end of the journey, Brandon hopes to be known simply and clearly—as someone who put it all on the line with intention, acted with integrity, honored his word, and cared deeply for the people around him. Someone reliable. Someone genuine. Someone who carried the torch forward, not for recognition, but because it was the right thing to do.</p>
+      <!-- END EXACT TEXT -->
     </section>
 
     <footer>
