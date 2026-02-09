@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brandon Krone — Mae Management LLC</title>
+  <meta name="description" content="Brandon Krone is the Founder & Principal of Mae Management LLC, a long-term ownership and acquisitions platform focused on durable, service-based businesses." />
+
+  <style>
+    :root{
+      --bg:#f6f1e7;
+      --ink:#1f1a14;
+      --muted:#5f564d;
+      --card: rgba(255,255,255,.74);
+      --line: rgba(31,26,20,.10);
+      --accent:#8b5e34;
+      --accent2:#6b4b2a;
+      --accent3:#4f6f5b;
+      --shadow: 0 18px 60px rgba(31,26,20,.12);
+      --radius: 18px;
+      --max: 980px;
+      --navHoverBg: rgba(255,255,255,.45);
+      --btnBg: rgba(255,255,255,.55);
+      --dotRing: rgba(79,111,91,.16);
+      --heroTexture1: rgba(31,26,20,.06);
+      --heroTexture2: rgba(31,26,20,.05);
+      --bodyGradTop: #fbf7ef;
+      --bodyGradBottom: #f2eadf;
+    }
+    [data-theme="dark"]{
+      --bg:#0f1110;
+      --ink: rgba(245,240,232,.92);
+      --muted: rgba(245,240,232,.70);
+      --card: rgba(26,24,22,.78);
+      --line: rgba(245,240,232,.14);
+      --accent:#c28a56;
+      --accent2:#b87a43;
+      --accent3:#79a187;
+      --shadow: 0 18px 70px rgba(0,0,0,.55);
+      --navHoverBg: rgba(255,255,255,.06);
+      --btnBg: rgba(255,255,255,.06);
+      --dotRing: rgba(121,161,135,.16);
+      --heroTexture1: rgba(245,240,232,.05);
+      --heroTexture2: rgba(245,240,232,.04);
+      --bodyGradTop: #121312;
+      --bodyGradBottom: #0b0c0b;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
+    body{
+      margin:0;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(139,94,52,.10), transparent 60%),
+        radial-gradient(700px 420px at 85% 15%, rgba(79,111,91,.10), transparent 60%),
+        radial-gradient(900px 520px at 50% 120%, rgba(31,26,20,.08), transparent 60%),
+        linear-gradient(180deg, var(--bodyGradTop) 0%, var(--bg) 40%, var(--bodyGradBottom) 100%);
+      line-height:1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a{ color: var(--accent2); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 34px 20px 70px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom: 20px;
+    }
+
+    .mark{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .mark .name{
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(31,26,20,.85);
+    }
+    [data-theme="dark"] .mark .name{ color: rgba(245,240,232,.88); }
+    .mark .sub{
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .rightControls{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+
+    nav{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    nav a{
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    nav a:hover{
+      color: var(--ink);
+      border-color: var(--line);
+      text-decoration:none;
+      background: var(--navHoverBg);
+    }
+
+    .themeToggle{
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--btnBg);
+      color: var(--ink);
+      font-size: 13px;
+      cursor: pointer;
+      user-select:none;
+    }
+    .themeToggle:hover{ border-color: rgba(79,111,91,.35); text-decoration:none; }
+    .themeToggle span{ transition: opacity .15s ease, font-weight .15s ease; }
+    .themeToggle .active{ opacity:.95; font-weight:700; }
+    .themeToggle .inactive{ opacity:.35; font-weight:400; }
+
+    .hero{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 34px 28px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(2px 2px at 10% 20%, var(--heroTexture1) 40%, transparent 41%),
+        radial-gradient(2px 2px at 30% 70%, var(--heroTexture2) 40%, transparent 41%),
+        radial-gradient(2px 2px at 65% 30%, var(--heroTexture2) 40%, transparent 41%),
+        radial-gradient(2px 2px at 85% 60%, var(--heroTexture2) 40%, transparent 41%);
+      opacity:.65;
+      pointer-events:none;
+    }
+
+    .kicker{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(95,86,77,.95);
+      margin-bottom: 12px;
+    }
+    [data-theme="dark"] .kicker{ color: rgba(245,240,232,.72); }
+    .dot{
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px var(--dotRing);
+    }
+
+    h1{
+      position:relative;
+      margin: 0 0 10px;
+      font-size: clamp(30px, 3.6vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    .lead{
+      position:relative;
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: rgba(31,26,20,.78);
+      font-size: 15px;
+      max-width: 90ch;
+    }
+    [data-theme="dark"] .lead{ color: rgba(245,240,232,.78); }
+
+    .content{
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.62);
+      box-shadow: 0 12px 40px rgba(31,26,20,.08);
+      padding: 22px;
+    }
+    [data-theme="dark"] .content{
+      background: rgba(26,24,22,.70);
+      box-shadow: 0 12px 44px rgba(0,0,0,.40);
+    }
+
+    .content h2{
+      margin: 0 0 10px;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(31,26,20,.75);
+    }
+    [data-theme="dark"] .content h2{ color: rgba(245,240,232,.74); }
+
+    .content p{
+      margin: 0 0 12px;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: rgba(31,26,20,.82);
+      font-size: 14px;
+      max-width: 92ch;
+    }
+    [data-theme="dark"] .content p{ color: rgba(245,240,232,.82); }
+    .content p:last-child{ margin-bottom: 0; }
+
+    footer{
+      margin-top: 18px;
+      padding: 14px 4px 0;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 13px;
+      color: rgba(95,86,77,.95);
+    }
+    [data-theme="dark"] footer{ color: rgba(245,240,232,.70); }
+    .fine{ color: rgba(95,86,77,.75); }
+    [data-theme="dark"] .fine{ color: rgba(245,240,232,.55); }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="mark">
+        <div class="name">Mae Management LLC</div>
+        <div class="sub">Austin, Texas • Long-term ownership • Private & confidential</div>
+      </div>
+
+      <div class="rightControls">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <button class="themeToggle" type="button" onclick="toggleTheme()" aria-label="Toggle day and night mode">
+          <span id="iconLight">☀︎</span>
+          <span style="opacity:.55;">/</span>
+          <span id="iconDark">☾</span>
+        </button>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="kicker"><span class="dot"></span> Founder</div>
+      <h1>Brandon Krone</h1>
+      <p class="lead">Founder & Principal, Mae Management LLC</p>
+    </section>
+
+    <section class="content">
+      <h2>Full bio</h2>
+      <p>
+        Brandon Krone is the Founder and Principal of Mae Management LLC, a management and acquisitions platform focused on long-term ownership of durable, service-based businesses—primarily within construction, construction management, project management, and federal-adjacent industries.
+      </p>
+      <p>
+        Brandon’s foundation was built early and hands-on. He grew up immersed in construction, working summers framing homes in Minnesota and gaining firsthand exposure across major trades. That experience instilled a deep respect for craftsmanship, operating discipline, and the people who build and maintain businesses from the ground up.
+      </p>
+      <p>
+        He competed as a Division I wrestler at the University of Minnesota—an experience that shaped his approach to leadership: consistency, discipline, and doing hard things repeatedly.
+      </p>
+      <p>
+        After college, Brandon built a career in finance across private wealth and institutional environments, including roles at Fidelity Investments and Charles Schwab. The work sharpened his framework for risk, capital allocation, and long-term decision-making.
+      </p>
+      <p>
+        Mae Management was founded as a convergence of Brandon’s background in construction, finance, and long-term stewardship. Mae is not a short-term investment vehicle or a roll-up driven by financial engineering. The priority is operational continuity, employee stability, and responsible growth—built on trust and follow-through.
+      </p>
+      <p>
+        Brandon is based in Austin, Texas and remains actively involved at the strategic level across acquisitions and platform development.
+      </p>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Mae Management LLC</div>
+      <div class="fine">Austin, Texas • Private • Confidential • Long-term ownership</div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const root = document.documentElement;
+    const iconLight = document.getElementById("iconLight");
+    const iconDark  = document.getElementById("iconDark");
+
+    function setActiveIcons(theme){
+      if(theme === "dark"){
+        iconDark.className = "active";
+        iconLight.className = "inactive";
+      } else {
+        iconLight.className = "active";
+        iconDark.className = "inactive";
+      }
+    }
+
+    function applyTheme(theme){
+      root.setAttribute("data-theme", theme);
+      setActiveIcons(theme);
+    }
+
+    function toggleTheme(){
+      const current = root.getAttribute("data-theme") || "light";
+      const next = (current === "dark") ? "light" : "dark";
+      applyTheme(next);
+      localStorage.setItem("theme", next);
+    }
+
+    (function initTheme(){
+      const saved = localStorage.getItem("theme");
+      if (saved){
+        applyTheme(saved);
+        return;
+      }
+      const prefersDark = window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      applyTheme(prefersDark ? "dark" : "light");
+    })();
+  </script>
+</body>
+</html>
