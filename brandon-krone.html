@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brandon Krone — Mae Management LLC</title>
-  
 
   <style>
     :root{
@@ -179,12 +178,19 @@
       position:absolute;
       inset:-2px;
       background:
-        radial-gradient(2px 2px at 10% 20%, var(--heroTexture1) 40%, transparent 41%),
-        radial-gradient(2px 2px at 30% 70%, var(--heroTexture2) 40%, transparent 41%),
-        radial-gradient(2px 2px at 65% 30%, var(--heroTexture2) 40%, transparent 41%),
-        radial-gradient(2px 2px at 85% 60%, var(--heroTexture2) 40%, transparent 41%);
+        radial-gradient(2px 2px at 10% 20%, rgba(31,26,20,.06) 40%, transparent 41%),
+        radial-gradient(2px 2px at 30% 70%, rgba(31,26,20,.05) 40%, transparent 41%),
+        radial-gradient(2px 2px at 65% 30%, rgba(31,26,20,.05) 40%, transparent 41%),
+        radial-gradient(2px 2px at 85% 60%, rgba(31,26,20,.05) 40%, transparent 41%);
       opacity:.65;
       pointer-events:none;
+    }
+    [data-theme="dark"] .hero:before{
+      background:
+        radial-gradient(2px 2px at 10% 20%, rgba(245,240,232,.05) 40%, transparent 41%),
+        radial-gradient(2px 2px at 30% 70%, rgba(245,240,232,.04) 40%, transparent 41%),
+        radial-gradient(2px 2px at 65% 30%, rgba(245,240,232,.04) 40%, transparent 41%),
+        radial-gradient(2px 2px at 85% 60%, rgba(245,240,232,.04) 40%, transparent 41%);
     }
 
     .kicker{
@@ -199,9 +205,7 @@
       color: rgba(95,86,77,.95);
       margin-bottom: 14px;
     }
-    [data-theme="dark"] .kicker{
-      color: rgba(245,240,232,.72);
-    }
+    [data-theme="dark"] .kicker{ color: rgba(245,240,232,.72); }
 
     .dot{
       width: 8px; height: 8px;
@@ -241,16 +245,6 @@
       box-shadow: 0 12px 44px rgba(0,0,0,.40);
     }
 
-    .content h2{
-      margin: 0 0 12px;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: rgba(31,26,20,.75);
-    }
-    [data-theme="dark"] .content h2{ color: rgba(245,240,232,.74); }
-
     .content p{
       margin: 0 0 14px;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -260,41 +254,6 @@
     }
     [data-theme="dark"] .content p{ color: rgba(245,240,232,.82); }
     .content p:last-child{ margin-bottom: 0; }
-
-    .profileRow{
-      display:flex;
-      gap:18px;
-      align-items:flex-start;
-      flex-wrap:wrap;
-      margin-bottom: 14px;
-    }
-
-    .avatar{
-      width:110px;
-      height:110px;
-      border-radius:50%;
-      object-fit:cover;
-      flex-shrink:0;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 30px rgba(31,26,20,.10);
-    }
-    [data-theme="dark"] .avatar{
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-
-    .metaName{
-      margin:0;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      font-weight:800;
-      font-size:16px;
-      color: var(--ink);
-    }
-    .metaTitle{
-      margin:6px 0 0;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--muted);
-      font-size:14px;
-    }
 
     footer{
       margin-top: 18px;
@@ -337,45 +296,31 @@
     </div>
 
     <section class="hero">
-  <div class="kicker"><span class="dot"></span> Owner bio</div>
+      <div class="kicker"><span class="dot"></span> Owner bio</div>
 
-  <div style="position:relative; display:flex; gap:18px; align-items:center; flex-wrap:wrap;">
-    <img
-      src="1e3a8cb2bf922aa1b9f3f852b8ec0b2c32a469580d44b8798b9c80ca31c502ff.jpeg"
-      alt="Brandon Krone"
-      style="
-        width:84px;
-        height:84px;
-        border-radius:50%;
-        object-fit:cover;
-        border: 1px solid var(--line);
-        box-shadow: 0 10px 30px rgba(31,26,20,.10);
-        flex-shrink:0;
-      "
-    />
-
-    <div style="min-width:220px;">
-      <h1 style="margin:0 0 6px;">Brandon Krone</h1>
-      <p class="lead" style="margin:0;">Founder & Principal, Mae Management LLC</p>
-    </div>
-  </div>
-</section>
-
-    <section class="content">
-      <h2>Brandon Krone</h2>
-
-      <div class="profileRow">
+      <div style="position:relative; display:flex; gap:18px; align-items:center; flex-wrap:wrap;">
         <img
-          class="avatar"
           src="1e3a8cb2bf922aa1b9f3f852b8ec0b2c32a469580d44b8798b9c80ca31c502ff.jpeg"
-          alt="Brandon Krone, Founder & Principal of Mae Management LLC"
+          alt="Brandon Krone"
+          style="
+            width:84px;
+            height:84px;
+            border-radius:50%;
+            object-fit:cover;
+            border: 1px solid var(--line);
+            box-shadow: 0 10px 30px rgba(31,26,20,.10);
+            flex-shrink:0;
+          "
         />
-        <div>
-          <p class="metaName">Brandon Krone</p>
-          <p class="metaTitle">Founder & Principal, Mae Management LLC</p>
+
+        <div style="min-width:220px;">
+          <h1 style="margin:0 0 6px;">Brandon Krone</h1>
+          <p class="lead" style="margin:0;">Founder & Principal, Mae Management LLC</p>
         </div>
       </div>
+    </section>
 
+    <section class="content">
       <!-- EXACT TEXT BELOW (no rewrites) -->
       <p>Brandon Krone<br/>
       Founder & Principal, Mae Management LLC</p>
