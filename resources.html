@@ -52,7 +52,7 @@ nav a[aria-current="page"]{ color:var(--accent); font-weight:700; }
 .hero{position:relative;overflow:hidden;margin:46px 0 0;padding:48px 44px;border:1px solid var(--line);border-radius:var(--radius-xl);background:linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,0) 34%), linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02)), var(--surface-strong);box-shadow:var(--shadow-xl);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
-h1{font-family:var(--serif);font-weight:600;font-size:clamp(40px,6vw,72px);line-height:1.04;letter-spacing:-.01em;margin:22px 0 0;max-width:14ch}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.6vw,52px);line-height:1.04;letter-spacing:-.01em;margin:22px 0 0;max-width:14ch}
 .lead{margin-top:24px;max-width:60ch;font-size:18px;color:var(--ink-soft)}
 .card{position:relative;overflow:hidden;margin:46px 0 30px;padding:40px;border:1px solid var(--line);border-radius:var(--radius-xl);background:linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.02)), var(--surface);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow-lg)}
 .card h2{font-family:var(--serif);font-weight:600;font-size:28px;letter-spacing:-.01em}
@@ -148,7 +148,7 @@ h1{font-family:var(--serif);font-weight:600;font-size:clamp(40px,6vw,72px);line-
 <section class="hero">
 <span class="eyebrow">Resources</span>
 <h1>Know what your business is worth.</h1>
-<p class="lead">A few practical tools for owners thinking ahead: a directional valuation range, plain-English notes on taxes and income, and the same information packet a buyer would ask you for. Use what helps. Nothing here is a commitment.</p>
+<p class="lead">A few practical tools for owners thinking ahead: a directional valuation range, plain-English notes on taxes and income, and the same information packet a buyer would ask you for. Use what helps—no strings attached.</p>
 </section>
 <section class="card" id="insights">
 <span class="eyebrow">Insights</span>
@@ -184,6 +184,10 @@ h1{font-family:var(--serif);font-weight:600;font-size:clamp(40px,6vw,72px);line-
 <span class="eyebrow">Information Packet</span>
 <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(26px,4vw,34px);margin:14px 0 6px">The buyer’s information request, in plain English</h2>
 <p class="cimMeta" style="margin-bottom:6px">When someone evaluates a business, this is the information they need. Filling it out early—estimates and round numbers are fine—saves weeks of back-and-forth. Preview it below, or download a blank template to work through on your own time.</p>
+<div class="btnRow" style="margin:0 0 22px">
+<a class="btnPrimary" id="cimDownload" href="#" download="Mae-Management-Information-Packet.txt">Download blank template ↓</a>
+<a class="btnGhost" id="cimAsk" href="#">Have us walk you through it →</a>
+</div>
 <details class="cimDoc" open>
 <summary>Preview the template <span aria-hidden="true">▾</span></summary>
 <div class="cimBody">
@@ -204,10 +208,7 @@ h1{font-family:var(--serif);font-weight:600;font-size:clamp(40px,6vw,72px);line-
 <ul><li>Vehicles, equipment, and tools included in a sale</li><li>Real estate or lease terms (owned vs. rented)</li><li>Intellectual property, brand, phone number, and domain</li><li>Anything specifically excluded from a sale</li></ul>
 <p class="cimMeta" style="margin-top:18px">Don’t worry about getting it perfect. Do your best, and gaps can be filled as the conversation develops.</p>
 </div></details>
-<div class="btnRow">
-<a class="btnPrimary" id="cimDownload" href="#" download="Mae-Management-Information-Packet.txt">Download blank template ↓</a>
-<a class="btnGhost" id="cimAsk" href="#">Have us walk you through it →</a>
-</div></section>
+</section>
 </main>
 </div>
 <script>
