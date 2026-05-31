@@ -100,7 +100,7 @@ td.lbl{padding:8px 10px;background:#faf6ee;font-weight:600;color:var(--slate);fo
 .tag{display:inline-block;background:#efe7d8;color:var(--clay2);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;}
 @media print{body{background:#fff !important;}.topbar,.actions,.foot{display:none !important;}.shell{max-width:100%;padding:0;}.page{box-shadow:none;border:0;border-radius:0;margin:0;padding:34px 30px;page-break-after:always;}.cover{page-break-after:always;}.note{break-inside:avoid;}}
 [data-theme="light"] .cover{background:linear-gradient(160deg,#fffdf9 0%,#f7f1e7 55%,#efe6d6 100%);color:var(--ink);border:1px solid var(--line)}[data-theme="light"] .cover .sub2,[data-theme="light"] .cover p{color:var(--muted)}[data-theme="light"] .cover .meta input{background:rgba(31,26,20,.03);border-bottom:1.5px solid rgba(31,26,20,.22);color:var(--ink)}[data-theme="light"] .cover .meta input::placeholder{color:var(--muted)}</style></head><body>
-<div class="shell">
+<div class="wrap">
 <header class="topbar">
   <div class="mark">
     <div class="name">Mae Management LLC</div>
@@ -118,7 +118,8 @@ td.lbl{padding:8px 10px;background:#faf6ee;font-weight:600;color:var(--slate);fo
     </nav>
     <button class="themeToggle" id="themeToggle" type="button" aria-label="Toggle color theme"><span class="active" data-sun>☀</span><span>/</span><span class="inactive" data-moon>☾</span></button>
   </div>
-</header>
+</header></div>
+<div class="shell">
 <div class="actions"><div class="lede">A fillable working document — type directly into any field, watch the charts fill in, then save it as a PDF or send it back to us. Nothing is submitted automatically.</div><div class="btns"><button class="btn btnG" onclick="window.print()">Save as PDF</button><button class="btn btnP" onclick="window.print()">Print packet</button></div></div>
 <section class="page cover">
 <div class="mark2">M</div>
