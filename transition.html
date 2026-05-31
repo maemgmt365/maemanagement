@@ -7,6 +7,7 @@
 <meta name="description" content="Whatever the next chapter looks like, our goal is to be the best resource in getting you there.">
 <style>
 :root{
+  --page-grad:radial-gradient(1200px 700px at 12% -8%, rgba(176,136,80,.20), transparent 60%),radial-gradient(1000px 620px at 100% 110%, rgba(160,120,72,.16), transparent 62%),radial-gradient(900px 520px at 100% 0%, rgba(138,154,123,.10), transparent 54%),linear-gradient(160deg, #fffdf9 0%, #f4ece0 55%, #ece1cf 100%);
   --bg:#f5f0e7; --bg-2:#efe7db;
   --surface:rgba(255,255,255,.72); --surface-strong:rgba(255,255,255,.86); --surface-soft:rgba(255,255,255,.54);
   --ink:#1f1a14; --ink-soft:rgba(31,26,20,.78); --muted:#665c52;
@@ -20,6 +21,7 @@
   --serif:Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, "Times New Roman", Times, serif;
 }
 html[data-theme="dark"]{
+  --page-grad:radial-gradient(1200px 700px at 12% -8%, rgba(135,96,64,.26), transparent 60%),radial-gradient(1000px 620px at 100% 110%, rgba(120,86,55,.20), transparent 62%),radial-gradient(900px 520px at 100% 0%, rgba(82,107,92,.10), transparent 54%),linear-gradient(160deg, #241f1b 0%, #33291f 55%, #2a2018 100%);
   --bg:#0e100f; --bg-2:#141715;
   --surface:rgba(28,25,23,.76); --surface-strong:rgba(30,27,24,.88); --surface-soft:rgba(255,255,255,.04);
   --ink:rgba(245,240,232,.94); --ink-soft:rgba(245,240,232,.78); --muted:rgba(245,240,232,.62);
@@ -30,7 +32,7 @@ html[data-theme="dark"]{
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:radial-gradient(1100px 600px at 12% -8%, rgba(135,96,64,.14), transparent 58%),radial-gradient(900px 520px at 100% 0%, rgba(82,107,92,.12), transparent 54%),radial-gradient(1100px 700px at 50% 120%, rgba(31,26,20,.08), transparent 60%),linear-gradient(180deg, #0e100f 0%, var(--bg) 26%, var(--bg-2) 100%);color:var(--ink);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased;transition:background-color var(--transition),color var(--transition)}
+body{font-family:var(--sans);background:var(--page-grad);background-attachment:fixed;color:var(--ink);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased;transition:background-color var(--transition),color var(--transition)}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 a{color:inherit;text-decoration:none}
 /* ===== Shared header (identical to homepage) ===== */
