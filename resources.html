@@ -135,7 +135,7 @@
 
     <section class="card still span2 reveal" id="certifications">
       <div class="sectionHead"><span class="num">No. 04</span><h2>What happens to your certifications when you sell</h2><span class="rule"></span></div>
-      <div class="dropcap">
+      <div>
         <p>If your business holds certifications tied to who you are as an owner (DBE, MBE, 8(a), veteran or Native status, HUBZone) they are one of the first things a serious buyer will ask about, and one of the last things most owners think about. Here is the plain version.</p>
         <p><strong>Most certifications do not transfer with the business.</strong> They belong to the owner's eligibility, not the company. When ownership changes, the new owner has to qualify and re-certify on their own. If they can't, the certification lapses, and every contract that depended on it becomes a risk. Buyers price that risk into the offer, sometimes heavily.</p>
         <p><strong>The rules changed in 2025.</strong> DOT's DBE program and SBA's 8(a) program no longer presume disadvantage based on race or sex; applicants now make an individualized showing. Programs tied to enrolled membership in a federally recognized tribe, such as the Buy Indian Act and the Indian Incentive Program, are grounded in political status rather than race and were not affected.</p>
@@ -200,8 +200,8 @@ window.__valpayload={rev:rev,sde:sde,mult:mult,low:low,mid:mid,high:high};
 ["cIndustry","cRevenue","cMargin","cOwner","cRecurring","cConc"].forEach(function(id){var el=$(id); if(el){el.addEventListener("input",calc);el.addEventListener("change",calc);}});
 calc();
 function mailto(subject,bodyLines){return "mailto:b@mae365.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(bodyLines.join("\n"));}
-var inq=$("cInquire"); if(inq){inq.addEventListener("click",function(e){e.preventDefault();var p=window.__valpayload||{};var L=["I used the valuation tool on mae365.com and would like a confidential read on my number.","",("Estimated range: "+(p.low?fmt(p.low)+" to "+fmt(p.high):"(not calculated)")),("Revenue: "+(p.rev?fmt(p.rev):"")),"","A bit about the business:",""];window.location.href=mailto("Valuation inquiry | mae365.com",L);});}
-var ask=$("cimAsk"); if(ask){ask.addEventListener("click",function(e){e.preventDefault();window.location.href=mailto("Information packet | mae365.com",["I'd like help working through the information packet.","","A bit about the business:",""]);});}
+var inq=$("cInquire"); if(inq){inq.addEventListener("click",function(e){e.preventDefault();var p=window.__valpayload||{};var L=["Hello,","","I used the valuation tool on the Mae website and would like a confidential read on my number.","",("Estimated range: "+(p.low?fmt(p.low)+" to "+fmt(p.high):"(not calculated)")),("Revenue: "+(p.rev?fmt(p.rev):"")),"","A brief overview of the business:","- Business name and location:","- What the business does / core services:","- Years in operation:","- Number of employees:","- Reason for exploring a sale, and ideal timing:","","Best days and times to talk:","","Regards,","[Your name]","[Phone]"];window.location.href=mailto("Valuation inquiry | Mae",L);});}
+var ask=$("cimAsk"); if(ask){ask.addEventListener("click",function(e){e.preventDefault();window.location.href=mailto("Information packet | Mae",["Hello,","","I would like to schedule a conversation to work through the information packet together.","","A brief overview of the business (as much as you are comfortable sharing; it helps us make the first call useful):","- Business name and location:","- What the business does / core services:","- Years in operation:","- Approximate annual revenue:","- Number of employees:","- Reason for exploring a sale, and ideal timing:","","Best days and times to talk:","","Regards,","[Your name]","[Phone]"]);});}
 })();
 </script>
 </body>

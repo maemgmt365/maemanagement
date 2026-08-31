@@ -152,7 +152,7 @@
     if(f.timeline.value)L.push("Timeline: "+f.timeline.value);
     if(f.name.value)L.push("Name: "+f.name.value);
     if(f.notes.value)L.push("Notes: "+f.notes.value);
-    window.location.href="mailto:b@mae365.com?subject="+encodeURIComponent("Selling your business | mae365.com")+"&body="+encodeURIComponent(L.join("\n")+"\n");
+    window.location.href="mailto:b@mae365.com?subject="+encodeURIComponent("Selling your business | Mae")+"&body="+encodeURIComponent(["Hello,","","I filled out the short form on the Mae website and would like to start a confidential conversation about selling my business.","",""].concat(L).concat(["","Anything else you should know:","","Best days and times to talk:","","Regards,","[Your name]","[Phone]"]).join("\n"));
   });
 })();
 </script>
