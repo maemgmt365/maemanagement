@@ -1,405 +1,157 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brandon Krone — Mae Management LLC</title>
-
+  <title>Brandon Krone | Founder & Principal, Mae Management LLC</title>
+  <meta name="description" content="Brandon Krone is the Founder and Principal of Mae Management LLC. Construction upbringing, Division I wrestler, institutional finance at Fidelity and Charles Schwab, and a long-term steward of service businesses." />
+  <link rel="canonical" href="https://mae365.com/brandon-krone.html" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://mae365.com/brandon-krone.html" />
+  <meta property="og:site_name" content="Mae Management LLC" />
+  <meta property="og:title" content="Brandon Krone | Founder & Principal, Mae Management LLC" />
+  <meta property="og:description" content="The full story behind Mae: construction, wrestling, finance, and why people matter more than assets." />
+  <meta property="og:image" content="https://mae365.com/og-card.jpg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Brandon Krone","jobTitle":"Founder & Principal","worksFor":{"@type":"Organization","name":"Mae Management LLC","url":"https://mae365.com"},"url":"https://mae365.com/brandon-krone.html","alumniOf":"University of Minnesota","address":{"@type":"PostalAddress","addressLocality":"Austin","addressRegion":"TX"}}
+  </script>
+  <link rel="stylesheet" href="assets/mae.css" />
   <style>
-    :root{
-      /* LIGHT (default) */
-      --bg: #f6f1e7;           /* warm cream */
-      --ink: #1f1a14;          /* deep brown-black */
-      --muted: #5f564d;        /* taupe */
-      --card: rgba(255,255,255,.74);
-      --line: rgba(31,26,20,.10);
-      --accent: #8b5e34;       /* clay */
-      --accent2:#6b4b2a;       /* darker clay */
-      --accent3:#4f6f5b;       /* sage */
-      --shadow: 0 18px 60px rgba(31,26,20,.12);
-      --radius: 18px;
-      --max: 980px;
-
-      --navHoverBg: rgba(255,255,255,.45);
-      --btnBg: rgba(255,255,255,.55);
-      --dotRing: rgba(79,111,91,.16);
-      --heroTexture1: rgba(31,26,20,.06);
-      --heroTexture2: rgba(31,26,20,.05);
-      --bodyGradTop: #fffdf9;
-      --bodyGradBottom: #ece1cf;
-    }
-
-    /* DARK THEME */
-    [data-theme="dark"]{
-      --bg: #0f1110;
-      --ink: rgba(245,240,232,.92);
-      --muted: rgba(245,240,232,.70);
-
-      --card: rgba(26,24,22,.78);
-      --line: rgba(245,240,232,.14);
-
-      --accent: #c28a56;
-      --accent2:#b87a43;
-      --accent3:#79a187;
-      --shadow: 0 18px 70px rgba(0,0,0,.55);
-
-      --navHoverBg: rgba(255,255,255,.06);
-      --btnBg: rgba(255,255,255,.06);
-      --dotRing: rgba(121,161,135,.16);
-
-      --heroTexture1: rgba(245,240,232,.05);
-      --heroTexture2: rgba(245,240,232,.04);
-
-      --bodyGradTop: #241f1b;
-      --bodyGradBottom: #2a2018;
-    }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-
-    body{
-      margin:0;
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      color: var(--ink);
-      background:
-        radial-gradient(900px 500px at 20% 10%, rgba(139,94,52,.10), transparent 60%),
-        radial-gradient(700px 420px at 85% 15%, rgba(79,111,91,.10), transparent 60%),
-        radial-gradient(900px 520px at 50% 120%, rgba(31,26,20,.08), transparent 60%),
-        linear-gradient(180deg, var(--bodyGradTop) 0%, var(--bg) 40%, var(--bodyGradBottom) 100%);
-      line-height:1.7;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a{ color: var(--accent2); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 34px 20px 70px;
-    }
-
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-bottom: 20px;
-    }
-
-    .mark{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-    }
-
-    .mark .name{
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      font-size: 13px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(31,26,20,.85);
-    }
-    [data-theme="dark"] .mark .name{
-      color: rgba(245,240,232,.88);
-    }
-
-    .mark .sub{
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .rightControls{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    nav{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    nav a{
-      color: var(--muted);
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-    }
-    nav a:hover{
-      color: var(--ink);
-      border-color: var(--line);
-      text-decoration:none;
-      background: var(--navHoverBg);
-    }
-
-    .themeToggle{
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--btnBg);
-      color: var(--ink);
-      font-size: 13px;
-      cursor: pointer;
-      user-select:none;
-    }
-    .themeToggle:hover{
-      border-color: rgba(79,111,91,.35);
-      text-decoration:none;
-    }
-    .themeToggle span{ transition: opacity .15s ease, font-weight .15s ease; }
-    .themeToggle .active{ opacity:.95; font-weight:700; }
-    .themeToggle .inactive{ opacity:.35; font-weight:400; }
-
-    .hero{
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--card);
-      box-shadow: var(--shadow);
-      padding: 34px 28px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero:before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(2px 2px at 10% 20%, rgba(31,26,20,.06) 40%, transparent 41%),
-        radial-gradient(2px 2px at 30% 70%, rgba(31,26,20,.05) 40%, transparent 41%),
-        radial-gradient(2px 2px at 65% 30%, rgba(31,26,20,.05) 40%, transparent 41%),
-        radial-gradient(2px 2px at 85% 60%, rgba(31,26,20,.05) 40%, transparent 41%);
-      opacity:.65;
-      pointer-events:none;
-    }
-    [data-theme="dark"] .hero:before{
-      background:
-        radial-gradient(2px 2px at 10% 20%, rgba(245,240,232,.05) 40%, transparent 41%),
-        radial-gradient(2px 2px at 30% 70%, rgba(245,240,232,.04) 40%, transparent 41%),
-        radial-gradient(2px 2px at 65% 30%, rgba(245,240,232,.04) 40%, transparent 41%),
-        radial-gradient(2px 2px at 85% 60%, rgba(245,240,232,.04) 40%, transparent 41%);
-    }
-
-    .kicker{
-      position:relative;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: rgba(95,86,77,.95);
-      margin-bottom: 14px;
-    }
-    [data-theme="dark"] .kicker{ color: rgba(245,240,232,.72); }
-
-    .dot{
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px var(--dotRing);
-    }
-
-    h1{
-      position:relative;
-      margin: 0 0 10px;
-      font-size: clamp(30px, 3.6vw, 44px);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-    }
-
-    .lead{
-      position:relative;
-      margin: 0;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: rgba(31,26,20,.78);
-      font-size: 15px;
-      max-width: 88ch;
-    }
-    [data-theme="dark"] .lead{ color: rgba(245,240,232,.78); }
-
-    .content{
-      margin-top: 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.62);
-      box-shadow: 0 12px 40px rgba(31,26,20,.08);
-      padding: 22px;
-    }
-    [data-theme="dark"] .content{
-      background: rgba(26,24,22,.70);
-      box-shadow: 0 12px 44px rgba(0,0,0,.40);
-    }
-
-    .content p{
-      margin: 0 0 14px;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: rgba(31,26,20,.82);
-      font-size: 14px;
-      max-width: 92ch;
-    }
-    [data-theme="dark"] .content p{ color: rgba(245,240,232,.82); }
-    .content p:last-child{ margin-bottom: 0; }
-
-    footer{
-      margin-top: 18px;
-      padding: 14px 4px 0;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      font-size: 13px;
-      color: rgba(95,86,77,.95);
-    }
-    [data-theme="dark"] footer{ color: rgba(245,240,232,.70); }
-    .fine{ color: rgba(95,86,77,.75); }
-    [data-theme="dark"] .fine{ color: rgba(245,240,232,.55); }
+    .bioHero{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start;padding:42px}
+    .bioHero h1{font-size:clamp(34px,4.2vw,54px);margin:6px 0 4px}
+    .bioHero .lead{margin-top:14px}
+    .facts{margin-top:22px;border:1px solid var(--line-clay);border-radius:14px;padding:6px;background:var(--surface-soft)}
+    .facts .in{border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+    .facts dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0;font-family:var(--sans);font-size:13px}
+    .facts dt{color:var(--muted);font-weight:600;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding-top:2px}
+    .facts dd{margin:0;color:var(--ink)}
+    .story{display:grid;grid-template-columns:1fr 1.7fr;gap:44px;align-items:start}
+    .story .side{position:sticky;top:110px}
+    .chapters{margin-top:14px;font-family:var(--sans);font-size:13.5px;list-style:none;padding:0;border-top:1px solid var(--line-strong)}
+    .chapters li{border-bottom:1px solid var(--line)}
+    .chapters a{display:flex;gap:12px;padding:10px 4px;color:var(--muted)}
+    .chapters a:hover{color:var(--ink)}
+    .chapters i{font-family:var(--serif);color:var(--accent);min-width:22px}
+    .chapter{margin-top:34px}
+    .chapter:first-child{margin-top:0}
+    .chapter h3{font-size:24px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line-clay)}
+    .chapter p{font-family:var(--serif)!important;font-size:16.5px!important;line-height:1.75!important;color:var(--ink-soft)!important}
+    .chapter p+p{margin-top:14px!important}
+    .chapter .pull{margin:22px 0}
+    @media (max-width:980px){.bioHero,.story{grid-template-columns:1fr;gap:26px}.story .side{position:static}.bioHero{padding:28px 22px}.portrait{max-width:220px}}
   </style>
 </head>
-
 <body>
-  <div class="wrap">
+<div class="progress" id="progress"></div>
+<div class="site-shell">
 
-    <div class="topbar">
-      <div class="mark">
-        <div class="name">Mae Management LLC</div>
-        <div class="sub">Austin, Texas • Long-term ownership • Private & confidential</div>
-      </div>
-
-      <div class="rightControls">
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
-
-        <button class="themeToggle" type="button" onclick="toggleTheme()" aria-label="Toggle day and night mode">
-          <span id="iconLight">☀︎</span>
-          <span style="opacity:.55;">/</span>
-          <span id="iconDark">☾</span>
-        </button>
-      </div>
+  <div class="topbar" id="navbar">
+    <a class="brand" href="index.html"><span class="brand-mark">M</span><span><span class="brand-word">Mae Management LLC</span><span class="brand-sub" style="display:block">Austin, Texas · Long-term ownership · Private &amp; confidential</span></span></a>
+    <div class="rightControls">
+      <nav class="primary" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#criteria">Criteria</a>
+        <a href="index.html#advantage">Advantage</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#owner" aria-current="page">Team</a>
+        <a href="resources.html">Resources</a>
+        <a href="transition.html" class="cta">Selling Your Business</a>
+      </nav>
+      <button class="themeToggle" id="themeToggle" type="button" aria-label="Toggle color theme"><span data-sun>☀</span><span style="opacity:.55">/</span><span data-moon>☾</span></button>
     </div>
+  </div>
 
-    <section class="hero">
-      <div class="kicker"><span class="dot"></span> Owner bio</div>
+  <section class="card engraved still bioHero reveal">
+    <div>
+      <div class="portrait" style="width:100%"><img src="1e3a8cb2bf922aa1b9f3f852b8ec0b2c32a469580d44b8798b9c80ca31c502ff.jpeg" alt="Brandon Krone" /></div>
+      <div class="facts"><div class="in"><dl>
+        <dt>Role</dt><dd>Founder &amp; Principal</dd>
+        <dt>Based</dt><dd>Austin, Texas</dd>
+        <dt>From</dt><dd>Minnesota</dd>
+        <dt>Education</dt><dd>Business, minor in architecture, University of Minnesota</dd>
+        <dt>Athletics</dt><dd>Division I wrestler</dd>
+        <dt>Finance</dt><dd>Fidelity Investments, Charles Schwab</dd>
+        <dt>Contact</dt><dd><a href="mailto:b@mae365.com">b@mae365.com</a></dd>
+      </dl></div></div>
+    </div>
+    <div>
+      <span class="eyebrow">Principal</span>
+      <h1>Brandon Krone</h1>
+      <p class="metaTitle" style="margin-bottom:0">Founder &amp; Principal, Mae Management LLC</p>
+      <p class="lead">Brandon Krone is the Founder and Principal of Mae Management LLC, a management and acquisitions platform focused on acquiring and stewarding durable, service-based businesses, primarily within construction, project management, and federal-adjacent industries.</p>
+      <blockquote class="pull" style="margin-top:22px"><p style="font-size:21px!important">People matter more than assets. That is not a slogan. It is the reason Mae exists.</p></blockquote>
+      <div class="btnRow"><a class="btn primary" href="transition.html">Start a conversation</a><a class="btn ghost" href="index.html">← Back to home</a></div>
+    </div>
+  </section>
 
-      <div style="position:relative; display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
-        <img
-          src="1e3a8cb2bf922aa1b9f3f852b8ec0b2c32a469580d44b8798b9c80ca31c502ff.jpeg"
-          alt="Brandon Krone"
-          style="
-               width:140px;
-    height:140px;
-            border-radius:50%;
-            object-fit:cover;
-            border: 1px solid var(--line);
-            box-shadow: 0 10px 30px rgba(31,26,20,.10);
-            flex-shrink:0;
-          "
-        />
-
-        <div style="min-width:220px;">
-          <h1 style="margin:0 0 6px;">Brandon Krone</h1>
-          <p class="lead" style="margin:0;">Founder & Principal, Mae Management LLC</p>
+  <div class="grid">
+    <section class="card still span2 reveal">
+      <div class="story">
+        <div class="side">
+          <div class="sectionHead" style="margin-bottom:0"><span class="num">The story</span><h2 style="font-size:26px">Built early, and by hand</h2></div>
+          <ul class="chapters">
+            <li><a href="#foundation"><i>i</i>The foundation</a></li>
+            <li><a href="#wrestling"><i>ii</i>Wrestling as philosophy</a></li>
+            <li><a href="#finance"><i>iii</i>From the jobsite to finance</a></li>
+            <li><a href="#worldview"><i>iv</i>What shaped the worldview</a></li>
+            <li><a href="#mae"><i>v</i>Why Mae</a></li>
+            <li><a href="#name"><i>vi</i>The name</a></li>
+            <li><a href="#ahead"><i>vii</i>Looking ahead</a></li>
+            <li><a href="#beyond"><i>viii</i>Beyond work</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="chapter" id="foundation">
+            <h3>The foundation</h3>
+            <p>Brandon's foundation was built early and hands-on. He grew up immersed in construction, working summers framing homes in Minnesota and gaining firsthand experience across nearly every major trade: exteriors, roofing, windows and doors, concrete, masonry, and finish work. His family operates a general contracting business, and his father spent most of his life as a journeyman carpenter before building that company alongside Brandon's brother. That exposure instilled a deep respect for craftsmanship, operating discipline, and the people who actually build and maintain businesses from the ground up.</p>
+          </div>
+          <div class="chapter" id="wrestling">
+            <h3>Wrestling as philosophy</h3>
+            <p>Alongside this practical background, Brandon studied business in college while pursuing a minor in architecture and competed as a Division I wrestler at the University of Minnesota. Wrestling proved formative, not just as a sport but as a philosophy. The discipline of doing hard things repeatedly, operating with consistency whether anyone is watching or not, and developing confidence through action continues to shape how he approaches business and leadership today.</p>
+          </div>
+          <div class="chapter" id="finance">
+            <h3>From the jobsite to finance</h3>
+            <p>After college, Brandon's path shifted from the jobsite to finance. He launched a financial practice immediately after graduating, later moving into more institutional roles at Fidelity Investments and ultimately Charles Schwab. Across these environments, he advised clients, supported complex financial decisions, and developed a disciplined framework for risk, capital allocation, and long-term planning. In parallel, he remained closely involved with startups and entrepreneurial projects, maintaining a persistent interest in building and owning businesses rather than simply advising them.</p>
+          </div>
+          <div class="chapter" id="worldview">
+            <h3>What shaped the worldview</h3>
+            <p>Several experiences profoundly shaped Brandon's worldview. The influence of coaches and mentors reinforced the belief that character matters most when no one is watching. His mother's passing in 2021 deeply clarified the finitude of time and reinforced a core conviction: people matter more than assets. Despite growing up without significant financial resources, his family was rich in love and values, an insight that now anchors how he approaches ownership, leadership, and relationships. More recently, relocating to Austin brought him into a community of disciplined, creative, and driven individuals who reinforced his belief that excellence thrives in environments that are both demanding and supportive.</p>
+            <p>Those who work closely with Brandon often describe him as consistent, disciplined, reliable, transparent, and deeply supportive, paired with a blunt, direct communication style and an unusually high work output. He is demanding but fair, exacting but loyal, and places a premium on trust and follow-through.</p>
+          </div>
+          <div class="chapter" id="mae">
+            <h3>Why Mae</h3>
+            <p>Mae Management was founded as a natural convergence of Brandon's background in construction, finance, and long-term stewardship. Through years of advising clients and friends through business exits, some positive and others deeply flawed, he recognized that acquisitions mirror wealth management in principle but demand far greater specificity, responsibility, and human consideration. What began as intellectual curiosity quickly became conviction.</p>
+            <p>Mae focuses on acquiring established, recession-resilient, service-based businesses, particularly in construction, construction management, project management, environmental services, and federal contracting-adjacent sectors. These are businesses with real operators, real employees, and real communities behind them. Mae seeks opportunities where thoughtful leadership, operational discipline, and strategic advantages such as Native ownership and federal certifications can be layered in to create sustainable growth without compromising culture or integrity.</p>
+            <p>Brandon is not interested in hostile takeovers, short-term flips, or extractive ownership models. While Mae employs professional operators and general managers to run day-to-day operations, he remains deeply involved at the strategic level. His goal is to be a reliable steward: someone sellers can trust, employees can rely on, and partners can build alongside.</p>
+          </div>
+          <div class="chapter" id="name">
+            <h3>The name</h3>
+            <blockquote class="pull"><p>Mae honors his late mother's middle name. It also stands for Mergers, Acquisitions, and Exits.</p></blockquote>
+            <p>More importantly, it reflects the mission: to carry forward what others have built, honor existing legacies, and responsibly grow businesses for the long term. The clarity around this purpose marked a defining moment, one that confirmed he was building something aligned with both his values and his future.</p>
+          </div>
+          <div class="chapter" id="ahead">
+            <h3>Looking ahead</h3>
+            <p>Brandon envisions Mae Management evolving into a scaled federal contracting and services platform, one capable of internal collaboration, joint ventures, and long-term career creation for hundreds or thousands of employees. The ambition is significant, but the approach remains grounded: disciplined growth, patient capital, and unwavering commitment to people.</p>
+          </div>
+          <div class="chapter" id="beyond">
+            <h3>Beyond work</h3>
+            <p>Outside of business, Brandon lives by the same principles he applies professionally: discipline, consistency, and long-term health. He has not missed a day of training in over four years and remains deeply committed to physical and mental longevity. His routine includes strength training, wrestling, Brazilian jiu-jitsu, and boxing, and he actively coaches wrestling at a local gym in Austin.</p>
+            <p>Much of Brandon's community is rooted in this training environment, spaces defined by accountability, effort, and mutual respect. When not working or training, he spends time outdoors with his two huskies, Cassius and Polo, who have been with him since they were puppies. He also enjoys trading, reading, cooking, traveling, biohacking, and continuously learning new skills.</p>
+            <p>At the end of the journey, Brandon hopes to be known simply and clearly: as someone who put it all on the line with intention, acted with integrity, honored his word, and cared deeply for the people around him. Someone reliable. Someone genuine. Someone who carried the torch forward, not for recognition, but because it was the right thing to do.</p>
+          </div>
         </div>
       </div>
     </section>
-
-    <section class="content">
-      <!-- EXACT TEXT BELOW (no rewrites) -->
-      <p>Brandon Krone is the Founder and Principal of Mae Management LLC, a management and acquisitions platform focused on acquiring and stewarding durable, service-based businesses—primarily within construction, project management, and federal-adjacent industries.</p>
-
-      <p>Brandon’s foundation was built early and hands-on. He grew up immersed in construction, working summers framing homes in Minnesota and gaining firsthand experience across nearly every major trade—exteriors, roofing, windows and doors, concrete, masonry, and finish work. His family operates a general contracting business, and his father spent most of his life as a journeyman carpenter before building that company alongside Brandon’s brother. That exposure instilled a deep respect for craftsmanship, operating discipline, and the people who actually build and maintain businesses from the ground up.</p>
-
-      <p>Alongside this practical background, Brandon studied business in college while pursuing a minor in architecture and competed as a Division I wrestler at the University of Minnesota. Wrestling proved formative—not just as a sport, but as a philosophy. The discipline of doing hard things repeatedly, operating with consistency whether anyone is watching or not, and developing confidence through action continues to shape how he approaches business and leadership today.</p>
-
-      <p>After college, Brandon’s path shifted from the jobsite to finance. He launched a financial practice immediately after graduating, later moving into more institutional roles at Fidelity Investments and ultimately Charles Schwab. Across these environments, he advised clients, supported complex financial decisions, and developed a disciplined framework for risk, capital allocation, and long-term planning. In parallel, he remained closely involved with startups and entrepreneurial projects, maintaining a persistent interest in building and owning businesses rather than simply advising them.</p>
-
-      <p>Several experiences profoundly shaped Brandon’s worldview. The influence of coaches and mentors reinforced the belief that character matters most when no one is watching. His mother’s passing in 2021 deeply clarified the finitude of time and reinforced a core conviction: people matter more than assets. Despite growing up without significant financial resources, his family was rich in love and values—an insight that now anchors how he approaches ownership, leadership, and relationships. More recently, relocating to Austin brought him into a community of disciplined, creative, and driven individuals who reinforced his belief that excellence thrives in environments that are both demanding and supportive.</p>
-
-      <p>Those who work closely with Brandon often describe him as consistent, disciplined, reliable, transparent, and deeply supportive—paired with a blunt, direct communication style and an unusually high work output. He is demanding but fair, exacting but loyal, and places a premium on trust and follow-through.</p>
-
-      <p>Mae Management was founded as a natural convergence of Brandon’s background in construction, finance, and long-term stewardship. Through years of advising clients and friends through business exits—some positive, others deeply flawed—he recognized that acquisitions mirror wealth management in principle but demand far greater specificity, responsibility, and human consideration. What began as intellectual curiosity quickly became conviction.</p>
-
-      <p>The name “Mae” holds personal and symbolic meaning. It honors his late mother’s middle name, while also standing for Mergers, Acquisitions, and Exits. More importantly, it reflects the mission: to carry forward what others have built, honor existing legacies, and responsibly grow businesses for the long term. The clarity around this purpose marked a defining moment—one that confirmed he was building something aligned with both his values and his future.</p>
-
-      <p>Mae Management focuses on acquiring established, recession-resilient, service-based businesses—particularly in construction, construction management, project management, environmental services, and federal contracting-adjacent sectors. These are businesses with real operators, real employees, and real communities behind them. Mae seeks opportunities where thoughtful leadership, operational discipline, and strategic advantages—such as Native ownership and federal certifications—can be layered in to create sustainable growth without compromising culture or integrity.</p>
-
-      <p>Brandon is not interested in hostile takeovers, short-term flips, or extractive ownership models. While Mae Management employs professional operators and general managers to run day-to-day operations, he remains deeply involved at the strategic level. His goal is to be a reliable steward—someone sellers can trust, employees can rely on, and partners can build alongside.</p>
-
-      <p>Looking ahead, Brandon envisions Mae Management evolving into a scaled federal contracting and services platform—one capable of internal collaboration, joint ventures, and long-term career creation for hundreds or thousands of employees. The ambition is significant, but the approach remains grounded: disciplined growth, patient capital, and unwavering commitment to people.</p>
-
-      <p><strong>Beyond Work</strong></p>
-
-      <p>Outside of business, Brandon lives by the same principles he applies professionally: discipline, consistency, and long-term health. He has not missed a day of training in over four years and remains deeply committed to physical and mental longevity. His routine includes strength training, wrestling, Brazilian jiu-jitsu, and boxing, and he actively coaches wrestling at a local gym in Austin.</p>
-
-      <p>Much of Brandon’s community is rooted in this training environment—spaces defined by accountability, effort, and mutual respect. When not working or training, he spends time outdoors with his two huskies, Cassius and Polo, who have been with him since they were puppies. He also enjoys trading, reading, cooking, traveling, biohacking, and continuously learning new skills.</p>
-
-      <p>At the end of the journey, Brandon hopes to be known simply and clearly—as someone who put it all on the line with intention, acted with integrity, honored his word, and cared deeply for the people around him. Someone reliable. Someone genuine. Someone who carried the torch forward, not for recognition, but because it was the right thing to do.</p>
-      <!-- END EXACT TEXT -->
-    </section>
-
-    <footer>
-      <div>© <span id="year"></span> Mae Management LLC</div>
-      <div class="fine">Austin, Texas • Private • Confidential • Long-term ownership</div>
-    </footer>
-
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const root = document.documentElement;
-    const iconLight = document.getElementById("iconLight");
-    const iconDark  = document.getElementById("iconDark");
-
-    function setActiveIcons(theme){
-      if(theme === "dark"){
-        iconDark.className = "active";
-        iconLight.className = "inactive";
-      } else {
-        iconLight.className = "active";
-        iconDark.className = "inactive";
-      }
-    }
-
-    function applyTheme(theme){
-      root.setAttribute("data-theme", theme);
-      setActiveIcons(theme);
-    }
-
-    function toggleTheme(){
-      const current = root.getAttribute("data-theme") || "light";
-      const next = (current === "dark") ? "light" : "dark";
-      applyTheme(next);
-      localStorage.setItem("theme", next);
-    }
-
-    (function initTheme(){
-      const saved = localStorage.getItem("theme");
-      if (saved){
-        applyTheme(saved);
-        return;
-      }
-      const prefersDark = window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-      applyTheme(prefersDark ? "dark" : "light");
-    })();
-  </script>
+  <footer class="site">
+    <div><strong style="color:var(--ink)">Mae Management LLC</strong> · Austin, Texas · Private &amp; confidential</div>
+    <div class="fnav"><a href="index.html">Home</a><a href="transition.html">Selling</a><a href="resources.html">Resources</a><a href="capability.html">Capability statement</a></div>
+    <div>© <span data-year></span> Mae Management LLC</div>
+  </footer>
+</div>
+<script src="assets/mae.js"></script>
 </body>
 </html>

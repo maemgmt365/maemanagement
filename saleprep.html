@@ -1,8 +1,9 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mae Management LLC — Acquisition Information Packet</title>
+<title>Acquisition Information Packet | Mae Management LLC</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/mae.css">
 <style>:root{
   --bg:#f5f0e7; --bg-2:#efe7db;
   --surface:rgba(255,255,255,.72); --surface-strong:rgba(255,255,255,.86); --surface-soft:rgba(255,255,255,.54);
@@ -14,7 +15,7 @@
   --radius-xl:28px; --radius-lg:22px; --radius-pill:999px;
   --transition:260ms cubic-bezier(.22,1,.36,1);
   --sans:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  --serif:Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, "Times New Roman", Times, serif;
+  --serif:Lora, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
 }
 html[data-theme="dark"]{
   --bg:#0e100f; --bg-2:#141715;
@@ -101,30 +102,26 @@ td.lbl{padding:8px 10px;background:#faf6ee;font-weight:600;color:var(--slate);fo
 @media print{body{background:#fff !important;}.topbar,.actions,.foot{display:none !important;}.shell{max-width:100%;padding:0;}.page{box-shadow:none;border:0;border-radius:0;margin:0;padding:34px 30px;page-break-after:always;}.cover{page-break-after:always;}.note{break-inside:avoid;}}
 [data-theme="light"] .cover{background:linear-gradient(160deg,#fffdf9 0%,#f7f1e7 55%,#efe6d6 100%);color:var(--ink);border:1px solid var(--line)}[data-theme="light"] .cover .sub2,[data-theme="light"] .cover p{color:var(--muted)}[data-theme="light"] .cover .meta input{background:rgba(31,26,20,.03);border-bottom:1.5px solid rgba(31,26,20,.22);color:var(--ink)}[data-theme="light"] .cover .meta input::placeholder{color:var(--muted)}</style></head><body>
 <div class="wrap">
-<header class="topbar">
-  <div class="mark">
-    <div class="name">Mae Management LLC</div>
-    <div class="sub">Austin, Texas • Long-term ownership • Private &amp; confidential</div>
-  </div>
-  <div class="rightControls">
-    <nav>
-      <a href="/index.html#about">About</a>
-      <a href="/index.html#focus">Focus</a>
-      <a href="/index.html#criteria">Criteria</a>
-      <a href="/index.html#owner">Team</a>
-      <a href="/transition.html">Selling Your Business</a>
-      <a href="/resources.html" aria-current="page">Resources</a>
-      <a href="/index.html#contact">Contact</a>
-    </nav>
-    <button class="themeToggle" id="themeToggle" type="button" aria-label="Toggle color theme"><span class="active" data-sun>☀</span><span>/</span><span class="inactive" data-moon>☾</span></button>
-  </div>
-</header></div>
+<div class="topbar" id="navbar">
+    <a class="brand" href="index.html"><span class="brand-mark">M</span><span><span class="brand-word">Mae Management LLC</span><span class="brand-sub" style="display:block">Austin, Texas · Long-term ownership · Private &amp; confidential</span></span></a>
+    <div class="rightControls">
+      <nav class="primary" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#criteria">Criteria</a>
+        <a href="index.html#advantage">Advantage</a>
+        <a href="index.html#process">Process</a>
+        <a href="resources.html" aria-current="page">Resources</a>
+        <a href="transition.html" class="cta">Selling Your Business</a>
+      </nav>
+      <button class="themeToggle" id="themeToggle" type="button" aria-label="Toggle color theme"><span data-sun>☀</span><span style="opacity:.55">/</span><span data-moon>☾</span></button>
+    </div>
+  </div></div>
 <div class="shell">
-<div class="actions"><div class="lede">A fillable working document — type directly into any field, watch the charts fill in, then save it as a PDF or send it back to us. Nothing is submitted automatically.</div><div class="btns"><button class="btn btnG" onclick="window.print()">Save as PDF</button><button class="btn btnP" onclick="window.print()">Print packet</button></div></div>
+<div class="actions"><div class="lede">A fillable working document. Type directly into any field, watch the charts fill in, then save it as a PDF and send it to us. Nothing is submitted automatically.</div><div class="btns"><a class="btn btnG" href="resources.html">← Back to resources</a><button class="btn btnG" onclick="window.print()">Save as PDF</button><button class="btn btnP" id="sendToMae" type="button">Send to Mae</button></div></div>
 <section class="page cover">
 <div class="mark2">M</div>
 <h1>Acquisition Information Packet</h1>
-<p class="sub">A simple, confidential walk-through of what a buyer needs to evaluate your business. Estimates and round numbers are perfectly fine — fill in what you know now, and we can work through the rest together.</p>
+<p class="sub">A simple, confidential walk-through of what a buyer needs to evaluate your business. Estimates and round numbers are perfectly fine. Fill in what you know now, and we can work through the rest together.</p>
 <div class="meta">
 <div><label>Business name</label><input placeholder="Legal name of the business"></div>
 <div><label>Owner / prepared by</label><input placeholder="Your name"></div>
@@ -133,7 +130,7 @@ td.lbl{padding:8px 10px;background:#faf6ee;font-weight:600;color:var(--slate);fo
 </div></section>
 <section class="page"><span class="sec-no">01</span><span class="eyebrow">Getting started</span>
 <h2>How to use this document</h2>
-<p class="lead">This mirrors what a broker would normally prepare. Fill in what you can directly — estimates and round numbers are fine. If a figure needs backup (tax returns, statements), just type “available” and we’ll request it after a mutual NDA. Anything you share is held in strict confidence.</p>
+<p class="lead">This mirrors what a broker would normally prepare. Fill in what you can directly. Estimates and round numbers are fine. If a figure needs backup (tax returns, statements), just type “available” and we’ll request it after a mutual NDA. Anything you share is held in strict confidence.</p>
 <h2 style="font-size:18px;margin-top:24px">Confirm the basics</h2>
 <div class="grid2">
 <div class="fld"><label>Legal business name</label><input></div><div class="fld"><label>Owner(s)</label><input></div>
@@ -149,11 +146,11 @@ td.lbl{padding:8px 10px;background:#faf6ee;font-weight:600;color:var(--slate);fo
 <div class="fld"><label>Website URL</label><input></div><div class="fld"><label>Google Business Profile</label><input></div>
 </div>
 <div class="fld"><label>Social media handles <span class="q">Facebook, Instagram, etc.</span></label><input></div>
-<div class="fld"><label>Brief history <span class="q">2–3 sentences — founding story, how it grew</span></label><textarea></textarea></div>
+<div class="fld"><label>Brief history <span class="q">2 to 3 sentences: founding story, how it grew</span></label><textarea></textarea></div>
 <div class="grid2"><div class="fld"><label>Reason for selling</label><textarea></textarea></div><div class="fld"><label>Plans after the sale <span class="q">retiring, relocating, new venture</span></label><textarea></textarea></div></div>
 </section>
 <section class="page"><span class="sec-no">03</span><span class="eyebrow">Section 3</span><h2>Services offered</h2>
-<p class="lead">List each service line and the approximate share of annual revenue it represents. The chart fills in as you type — a quick visual of where the revenue comes from.</p>
+<p class="lead">List each service line and the approximate share of annual revenue it represents. The chart fills in as you type, a quick visual of where the revenue comes from.</p>
 <table id="svcTable"><thead><tr><th style="width:54%">Service line</th><th style="width:23%">% of revenue</th><th style="width:23%">Recurring? (Y/N)</th></tr></thead><tbody>
 <tr><td><input data-svc="name" placeholder="e.g. installation"></td><td><input data-svc="pct" type="number" min="0" max="100" oninput="maeSvc()" placeholder="%"></td><td><input data-svc="rec" placeholder="Y / N"></td></tr>
 <tr><td><input data-svc="name" placeholder=""></td><td><input data-svc="pct" type="number" min="0" max="100" oninput="maeSvc()" placeholder="%"></td><td><input data-svc="rec" placeholder="Y / N"></td></tr>
@@ -165,7 +162,7 @@ td.lbl{padding:8px 10px;background:#faf6ee;font-weight:600;color:var(--slate);fo
 <div class="viz"><div><div class="cap">Revenue by service line</div><svg id="svcChart" viewBox="0 0 300 170" width="100%" height="170" role="img"></svg></div><div><div class="cap">Share</div><div class="legend" id="svcLegend"><div class="row" style="color:var(--muted)">Enter percentages to see the breakdown.</div></div></div></div>
 </section>
 <section class="page"><span class="sec-no">04</span><span class="eyebrow">Section 4</span><h2>Customers &amp; contracts</h2>
-<p class="lead">Enter your recurring vs. one-time customer split below — the donut updates live to show how much of the base is contracted and durable.</p>
+<p class="lead">Enter your recurring vs. one-time customer split below. The donut updates live to show how much of the base is contracted and durable.</p>
 <div class="viz"><div><div class="cap">Client mix</div><svg id="mixChart" viewBox="0 0 170 170" width="170" height="170" role="img" style="display:block;margin:0 auto"></svg></div>
 <div><div class="cap">Breakdown</div><div class="fld"><label>Recurring / contract customers <span class="q">count</span></label><input id="mixRec" type="number" min="0" oninput="maeMix()" placeholder="0"></div><div class="fld"><label>One-time / project customers <span class="q">last 12 mo.</span></label><input id="mixOne" type="number" min="0" oninput="maeMix()" placeholder="0"></div><div class="legend" id="mixLegend"></div></div></div>
 <div class="grid2" style="margin-top:18px">
@@ -173,10 +170,10 @@ td.lbl{padding:8px 10px;background:#faf6ee;font-weight:600;color:var(--slate);fo
 <div class="fld"><label>Avg. annual revenue / recurring customer</label><input></div><div class="fld"><label>Estimated retention rate <span class="q">% staying year over year</span></label><input></div>
 <div class="fld"><label>Average customer lifetime <span class="q">years</span></label><input></div><div class="fld"><label>Customer concentration <span class="q">any single customer >10% of revenue?</span></label><input></div>
 </div>
-<div class="fld"><label>Primary acquisition channels <span class="q">referrals, Google, etc. — ranked</span></label><textarea></textarea></div>
+<div class="fld"><label>Primary acquisition channels <span class="q">referrals, Google, etc., ranked</span></label><textarea></textarea></div>
 <div class="fld"><label>Are customer contracts transferable to a new owner? <span class="q">Y / N</span></label><input></div>
 </section>
-<section class="page"><span class="sec-no">05</span><span class="eyebrow">Section 5</span><h2>Financial summary <span style="font-size:14px;color:var(--muted);font-weight:400">— last 5 years</span></h2>
+<section class="page"><span class="sec-no">05</span><span class="eyebrow">Section 5</span><h2>Financial summary <span style="font-size:14px;color:var(--muted);font-weight:400">last 5 years</span></h2>
 <p class="lead">Three years minimum, five preferred. Estimates are fine. As you enter Gross Revenue and SDE, the chart plots the trend so the story is visible at a glance.</p>
 <table id="finTable"><thead><tr><th style="width:30%">Item</th><th>Yr 1</th><th>Yr 2</th><th>Yr 3</th><th>Yr 4</th><th>Yr 5</th></tr></thead><tbody>
 <tr><td class="lbl">Year</td><td><input data-fin="year" data-y="0"></td><td><input data-fin="year" data-y="1"></td><td><input data-fin="year" data-y="2"></td><td><input data-fin="year" data-y="3"></td><td><input data-fin="year" data-y="4"></td></tr>
@@ -189,7 +186,7 @@ td.lbl{padding:8px 10px;background:#faf6ee;font-weight:600;color:var(--slate);fo
 <tr><td class="lbl">SDE</td><td><input data-fin="sde" data-y="0" oninput="maeFin()"></td><td><input data-fin="sde" data-y="1" oninput="maeFin()"></td><td><input data-fin="sde" data-y="2" oninput="maeFin()"></td><td><input data-fin="sde" data-y="3" oninput="maeFin()"></td><td><input data-fin="sde" data-y="4" oninput="maeFin()"></td></tr>
 </tbody></table>
 <div class="viz"><div style="grid-column:1 / -1"><div class="cap">Revenue &amp; SDE trend</div><svg id="finChart" viewBox="0 0 560 220" width="100%" height="220" role="img"></svg><div class="legend" style="display:flex;gap:18px;margin-top:6px"><div class="row" style="margin:0"><span class="sw" style="background:#876040"></span>Gross revenue</div><div class="row" style="margin:0"><span class="sw" style="background:#8a9a7b"></span>SDE</div></div></div></div>
-<p class="lead" style="margin-top:18px;font-size:13px">Owner add-backs — list personal or one-time items run through the business a new owner wouldn’t have (vehicle, health insurance, phone, family on payroll, one-time fees):</p>
+<p class="lead" style="margin-top:18px;font-size:13px">Owner add-backs: list personal or one-time items run through the business a new owner wouldn’t have (vehicle, health insurance, phone, family on payroll, one-time fees):</p>
 <div class="fld"><textarea placeholder="List add-backs with annual amounts"></textarea></div>
 <div class="grid3"><div class="fld"><label>Tax returns available? <span class="q">3–5 yrs, Y/N</span></label><input></div><div class="fld"><label>P&amp;L statements? <span class="q">Y/N</span></label><input></div><div class="fld"><label>Bank statements? <span class="q">12 mo, Y/N</span></label><input></div></div>
 <div class="grid2"><div class="fld"><label>Accounting software <span class="q">QuickBooks, etc.</span></label><input></div><div class="fld"><label>Cash or accrual basis?</label><input></div></div>
@@ -208,13 +205,13 @@ td.lbl{padding:8px 10px;background:#faf6ee;font-weight:600;color:var(--slate);fo
 <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
 <tr><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
 </tbody></table>
-<p class="fineprint"><span class="ast">*</span> Have more than ten on the team? Simply print this page a second time — there’s room for everyone.</p>
+<p class="fineprint"><span class="ast">*</span> Have more than ten on the team? Simply print this page a second time. There’s room for everyone.</p>
 <div class="grid2" style="margin-top:14px"><div class="fld"><label>Total annual payroll <span class="q">incl. taxes &amp; benefits</span></label><input></div><div class="fld"><label>Employees staying through transition?</label><input></div></div>
 <div class="grid2"><div class="fld"><label>Non-compete / non-solicit in place? <span class="q">Y/N</span></label><input></div><div class="fld"><label>Regular 1099 subcontractors? <span class="q">annual spend</span></label><input></div></div>
 </section>
 <section class="page"><span class="sec-no">07</span><span class="eyebrow">Section 7</span><h2>The owner’s day-to-day</h2>
 <p class="lead">This helps us understand the role a new owner or operator would step into.</p>
-<div class="grid2"><div class="fld"><label>Hours / week — peak season</label><input></div><div class="fld"><label>Hours / week — off season</label><input></div></div>
+<div class="grid2"><div class="fld"><label>Hours / week, peak season</label><input></div><div class="fld"><label>Hours / week, off season</label><input></div></div>
 <div class="fld"><label>Time breakdown by activity <span class="q">scheduling, calls, billing, in-field, sales, admin</span></label><textarea></textarea></div>
 <div class="fld"><label>Walk through a typical peak-season workday <span class="q">morning, midday, evening</span></label><textarea></textarea></div>
 </section>
@@ -224,23 +221,23 @@ td.lbl{padding:8px 10px;background:#faf6ee;font-weight:600;color:var(--slate);fo
 <div class="fld"><label>Trailers &amp; large equipment</label><textarea></textarea></div>
 <div class="grid2"><div class="fld"><label>Hand tools / small equipment <span class="q">est. value</span></label><input></div><div class="fld"><label>Parts / materials inventory <span class="q">est. value</span></label><input></div></div>
 <div class="grid3"><div class="fld"><label>Phone number transferable? <span class="q">Y/N</span></label><input></div><div class="fld"><label>Domain &amp; website? <span class="q">Y/N</span></label><input></div><div class="fld"><label>Customer list / CRM? <span class="q">Y/N</span></label><input></div></div>
-<div class="fld"><label>Lease info <span class="q">yard, storage, office — rent, term remaining</span></label><textarea></textarea></div>
+<div class="fld"><label>Lease info <span class="q">yard, storage, office: rent, term remaining</span></label><textarea></textarea></div>
 <div class="fld"><label>Items EXCLUDED from sale <span class="q">personal vehicle, tools, etc.</span></label><input></div>
 </section>
 <section class="page"><span class="sec-no">09</span><span class="eyebrow">Section 9</span><h2>Licensing &amp; compliance</h2>
 <div class="grid2"><div class="fld"><label>Primary license #(s) &amp; expiration</label><input></div><div class="fld"><label>Held in owner’s or business name?</label><input></div></div>
 <div class="grid2"><div class="fld"><label>Certifications <span class="q">held by whom?</span></label><input></div><div class="fld"><label>Local permits</label><input></div></div>
 <div class="fld"><label>Are licenses transferable, or must buyer re-qualify?</label><input></div>
-<div class="fld"><label>Insurance <span class="q">GL, workers’ comp, vehicle, umbrella — carriers &amp; premiums</span></label><textarea></textarea></div>
+<div class="fld"><label>Insurance <span class="q">GL, workers’ comp, vehicle, umbrella: carriers &amp; premiums</span></label><textarea></textarea></div>
 <div class="fld"><label>Any open / threatened claims, disputes, or regulatory issues?</label><textarea></textarea></div>
 </section>
 <section class="page"><span class="sec-no">10</span><span class="eyebrow">Section 10</span><h2>Vendors, suppliers &amp; liabilities</h2>
 <div class="fld"><label>Top 5 suppliers <span class="q">approx. annual spend with each</span></label><textarea></textarea></div>
 <div class="grid2"><div class="fld"><label>Volume discounts / loyalty programs? <span class="q">transferable?</span></label><input></div><div class="fld"><label>Outstanding debt / loans / LOCs</label><input></div></div>
 <div class="grid2"><div class="fld"><label>Accounts receivable <span class="q">balance &amp; aging</span></label><input></div><div class="fld"><label>Accounts payable <span class="q">balance</span></label><input></div></div>
-<div class="fld"><label>Referral partners <span class="q">landscapers, builders, property mgrs — names &amp; volume</span></label><textarea></textarea></div>
+<div class="fld"><label>Referral partners <span class="q">landscapers, builders, property mgrs: names &amp; volume</span></label><textarea></textarea></div>
 </section>
-<section class="page"><span class="sec-no">11</span><span class="eyebrow">Section 11</span><h2>Growth &amp; risk <span style="font-size:14px;color:var(--muted);font-weight:400">— your view</span></h2>
+<section class="page"><span class="sec-no">11</span><span class="eyebrow">Section 11</span><h2>Growth &amp; risk <span style="font-size:14px;color:var(--muted);font-weight:400">your view</span></h2>
 <div class="fld"><label>Top 3 growth opportunities you see but haven’t pursued</label><textarea></textarea></div>
 <div class="fld"><label>Top 3 risks or threats to the business</label><textarea></textarea></div>
 <div class="fld"><label>Why hasn’t the business grown beyond its current size?</label><textarea></textarea></div>
@@ -255,24 +252,20 @@ td.lbl{padding:8px 10px;background:#faf6ee;font-weight:600;color:var(--slate);fo
 </section>
 <section class="page"><span class="eyebrow">Wrapping up</span><h2>Next steps</h2>
 <ul style="color:var(--muted);line-height:1.7;padding-left:18px">
-<li>Return this packet with whatever you can fill in — even partial answers move things forward.</li>
+<li>Return this packet with whatever you can fill in. Even partial answers move things forward.</li>
 <li>We’ll sign a mutual NDA before reviewing tax returns, bank statements, or full customer lists.</li>
 <li>A follow-up call to walk through anything that needs clarifying.</li>
 <li>A Letter of Intent if both sides want to keep going.</li>
 </ul>
-<div class="note"><span class="tag" style="background:#ffffff22;color:#ffe7c4">From the Mae team</span><h3>Thinking about selling — even someday?</h3><p style="margin:0 0 4px">Whether you’re ready now or just want to understand what your business could be worth, we’re glad to be a confidential sounding board. No pressure, no obligation — just a straight conversation, one owner to a future one.</p><p style="margin:10px 0 0">Reach us anytime at <a href="mailto:b@mae365.com">b@mae365.com</a>.</p></div>
+<div class="note"><span class="tag" style="background:#ffffff22;color:#ffe7c4">From the Mae team</span><h3>Thinking about selling, even someday?</h3><p style="margin:0 0 4px">Whether you’re ready now or just want to understand what your business could be worth, we’re glad to be a confidential sounding board. No pressure, no obligation. Just a straight conversation, one owner to a future one.</p><p style="margin:10px 0 0">Save this as a PDF and send it to <a href="mailto:b@mae365.com">b@mae365.com</a>, or <a href="#" id="requestCall">request a call</a> and we'll go through it together. .</p></div>
 </section>
 <p class="foot">Mae Management LLC · Mergers, Acquisitions, Exits &amp; Management · Held in strict confidence · This document is an information request, not an appraisal or an offer.</p>
 </div>
+<script src="assets/mae.js"></script>
 <script>
 
 (function(){
-  var root=document.documentElement, key="theme";
-  var saved=localStorage.getItem(key); if(saved){root.setAttribute("data-theme",saved);}
-  function sync(){var dark=root.getAttribute("data-theme")==="dark";var sun=document.querySelector("[data-sun]"),moon=document.querySelector("[data-moon]");if(sun&&moon){sun.className=dark?"inactive":"active";moon.className=dark?"active":"inactive";}}
-  sync();
-  var tg=document.getElementById("themeToggle");
-  if(tg){tg.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark";var n=dark?"light":"dark";root.setAttribute("data-theme",n);localStorage.setItem(key,n);sync();});}
+  
   })();
 
 var MAE_PAL=["#876040","#8a9a7b","#b08850","#6f4e34","#a8b39a","#c9a06a"];
@@ -312,5 +305,14 @@ function maeFin(){
  svg.innerHTML=s;
 }
 document.addEventListener("DOMContentLoaded",function(){maeMix();});
+
+(function(){
+  function g(id){var e=document.getElementById(id);return e?e.value.trim():"";}
+  function bizName(){var els=document.querySelectorAll("input,textarea");for(var i=0;i<els.length;i++){var ph=(els[i].placeholder||"")+" "+(els[i].getAttribute("aria-label")||"");if(/business name/i.test(ph)&&els[i].value.trim())return els[i].value.trim();}return "";}
+  var b=document.getElementById("sendToMae");
+  if(b)b.addEventListener("click",function(){var n=bizName();var subj="Information packet"+(n?" | "+n:"")+" | mae365.com";var body=["Attached is my completed Acquisition Information Packet from mae365.com.","","(Please save the packet as a PDF and attach it to this email before sending.)","","A bit about the business:",""].join("\n");window.location.href="mailto:b@mae365.com?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);});
+  var r=document.getElementById("requestCall");
+  if(r)r.addEventListener("click",function(e){e.preventDefault();window.location.href="mailto:b@mae365.com?subject="+encodeURIComponent("Request a call | Information packet")+"&body="+encodeURIComponent("I'd like to walk through the information packet on a call.\n\nBest days/times:\n\nA bit about the business:\n");});
+})();
 </script>
 </body></html>
