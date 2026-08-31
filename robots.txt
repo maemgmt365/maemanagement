@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /tools/
+Sitemap: https://mae365.com/sitemap.xml
