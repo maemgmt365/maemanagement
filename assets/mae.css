@@ -193,12 +193,6 @@ em.clay{font-style:italic;color:var(--accent-2)}
 .pathway h3{font-size:26px;font-weight:500}
 .pathway p{flex:1}
 
-/* ── Labs band (sage = the lab; clay = the firm) ── */
-.labs{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-top:24px;padding:26px 32px;border:1px solid var(--line);border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--accent-wash),transparent 60%),var(--surface-soft)}
-.labs-left{display:flex;align-items:center;gap:20px}
-.labs-mark{width:46px;height:46px;border-radius:13px;border:1px solid var(--accent-3);color:var(--accent-3);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:22px;flex-shrink:0;background:var(--accent-wash)}
-.labs h3{font-size:22px;margin-bottom:2px}
-.labs p{margin:0;font-family:var(--sans);font-size:14px;color:var(--muted);max-width:60ch}
 
 /* ── Invitation (contact) ── */
 .invite{text-align:center;padding:52px 40px}
